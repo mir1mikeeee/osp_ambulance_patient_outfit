@@ -1,0 +1,3655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link 
+    rel="stylesheet" 
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
+    crossorigin="anonymous"
+  />
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- <script src="https://kit.fontawesome.com/21b2ac023d.js" crossorigin="anonymous"></script> -->
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+
+  <script src="cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <div id="painScreen" style="position: absolute; height: 100%; width: 100%;"></div>
+
+
+  <div class="wrapper">
+    <div class="topwrapper"></div>
+
+    <div class="topbar">
+      <span>MEDICAL SYSTEM</span>
+      <i class="fa-solid fa-xmark closebutton" onclick="CloseUI()"></i>
+    </div>
+
+    <div class="skellydiv">
+      <img class="body" src="img/background.png">
+
+      <img class="neck">
+      <img class="spine">
+      <img class="rlegfracture">
+      <img class="llegfracture">
+      <img class="rarmfracture">
+      <img class="larmfracture">
+
+      <img class="head" src="img/head.png" onclick="Head()">
+      <img class="torso" src="img/torso.png" onclick="Torso()">
+      <img class="rarm" src="img/arm_right.png" onclick="Rarm()">
+      <img class="larm" src="img/arm_left.png" onclick="Larm()">
+      <img class="rleg" src="img/leg_right.png" onclick="Rleg()">
+      <img class="lleg" src="img/leg_left.png" onclick="Lleg()">
+
+      <img class="rarmtor" src="" >
+      <img class="larmtor" src="" >
+      <img class="rlegtor" src="" >
+      <img class="llegtor" src="" >
+    </div>
+
+    <div class="woundbox1">
+      <!-- <div class="headtxt">
+      </div> -->
+      <span class="woundboxtitle headtxt">HEAD</span>
+
+      <div class="woundtext woundHead"></div>
+    </div>
+
+    <div class="woundbox2">
+      <!-- <div class="topwoundbox rarmtxt"></div> -->
+      <span class="woundboxtitle rarmtxt">HEAD</span>
+
+      <div class="woundtext woundRarm"></div>
+    </div>
+
+    <div class="woundbox3">
+      <!-- <div class="topwoundbox rlegtxt"></div> -->
+      <span class="woundboxtitle rlegtxt">HEAD</span>
+
+      <div class="woundtext woundRleg"></div>
+    </div>
+
+    <div class="woundbox4">
+      <!-- <div class="topwoundbox torsotxt"></div> -->
+      <span class="woundboxtitle torsotxt">HEAD</span>
+
+      <div class="woundtext woundTorso"></div>
+    </div>
+
+    <div class="woundbox5">
+      <!-- <div class="topwoundbox larmtxt"></div> -->
+      <span class="woundboxtitle larmtxt">HEAD</span>
+
+      <div class="woundtext woundLarm"></div>
+    </div>
+
+    <div class="woundbox6">
+      <!-- <div class="topwoundbox llegtxt"></div> -->
+      <span class="woundboxtitle llegtxt">HEAD</span>
+
+      <div class="woundtext woundLleg"></div>
+    </div>
+
+    <div class="namebox">
+      <span class="playername"></span>
+      <div class="groupbutton" onclick="Group()">
+        <i style="font-size:1.98vh; color:rgb(52, 234, 197); margin: 0 auto; position: absolute; margin-top:0.376vh; margin-left:-0.9vh;" class="fa-solid fa-plus"></i>
+      </div>
+    </div>
+
+    <div class="infobox">
+      <div class="triagebox">
+        <div class="triageText"></div>
+      </div>
+      <div class="paddingbox">
+        <div class="painbox"><span class="pain"></span><span class="infoboxtext paintext"></span></div>
+        <div class="bloodbox"><span class="bloodloss"></span><span class="infoboxtext bloodtext"></span></div>
+        <div class="refillbloodbox"><span class="refillblood"></span><span class="infoboxtext refillsalinetext"></span><span class="infoboxtext refillbloodtext"></span></div>
+      </div>
+    </div>
+
+
+    <div class="border1"></div>
+    <div class="border2"></div>
+    <div class="border3"></div>
+    <div class="border4"></div>
+    <div class="border5"></div>
+    <div class="border6"></div>
+
+    <div class="logbutton" onclick="slidePatientLog()">
+      <i style="font-size:2.25vh; color:rgb(52, 234, 197); margin: 0 auto; position: absolute; margin-top:0.72vh; margin-left:0.99vh;" class="fa-solid fa-file-invoice"></i>
+    </div>
+
+    <div class="actionbutton" onclick="slideActionbox()">
+      <i style="font-size:2.52vh; color:rgb(52, 234, 197); margin: 0 auto; position: absolute; margin-top:0.54vh; margin-left:0.72vh;" class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+
+  <div id="patientlog" class="patientlog">
+    <div class="patientlogtop"></div>
+    <div class="patientlogcontent"></div>
+  </div>
+
+  <div id="actionbox" class="actionbox">
+    <div class="patientlogtop currentbodypart"></div>
+
+    <div class="container"> 
+      <section id="fancyTabWidget" class="tabs t-tabs">
+        <ul class="nav nav-tabs fancyTabs" role="tablist">
+          <li class="tab fancyTab active">
+              <div class="arrow-down">
+                  <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab1" href="#tabBody1" role="tab" aria-controls="tabBody1" aria-selected="true" data-toggle="tab" tabindex="0" onclick="Medical()">
+                  <span class="fa-solid fa-star-of-life"></span>
+              </a>
+
+          </li>
+          <li class="tab fancyTab">
+              <div class="arrow-down">
+                  <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab2" href="#tabBody2" role="tab" aria-controls="tabBody2" aria-selected="true" data-toggle="tab" tabindex="0" onclick="Medicine()">
+                  <span class="fa-solid fa-syringe"></span>
+              </a>
+
+          </li>
+          <li class="tab fancyTab">
+              <div class="arrow-down">
+                  <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab3" href="#tabBody3" role="tab" aria-controls="tabBody3" aria-selected="true" data-toggle="tab" tabindex="0" onclick="Interventions()">
+                  <span class="fa-solid fa-heart-pulse"></span>
+              </a>
+
+          </li>
+          <li class="tab fancyTab">
+              <div class="arrow-down">
+                  <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab4" href="#tabBody4" role="tab" aria-controls="tabBody4" aria-selected="true" data-toggle="tab" tabindex="0" onclick="Triage()">
+                  <span class="fa-solid fa-house-medical-circle-exclamation"></span>
+              </a>
+
+          </li>
+          <li class="tab fancyTab">
+              <div class="arrow-down">
+                  <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab5" href="#tabBody5" role="tab" aria-controls="tabBody5" aria-selected="true" data-toggle="tab" tabindex="0" onclick="Transport()">
+                  <span class="fa-solid fa-box-open"></span>
+              </a>
+
+          </li>
+        </ul>
+          <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
+            <div class="pane">
+
+            </div>
+
+            <!-- <div class="tab-pane" id="tabBody0">
+            </div> -->
+
+            <div class="tab-pane fade" id="tabBody1">
+            </div>
+
+            <div class="tab-pane fade" id="tabBody2">
+            </div>
+
+            <div class="tab-pane fade" id="tabBody3">
+            </div>
+
+            <div class="tab-pane fade" id="tabBody4">
+            </div>
+
+            <div class="tab-pane fade" id="tabBody5">
+            </div>
+
+          </div>
+      </section>
+    </div>
+
+    <div class="quickview"></div>
+
+    <div class="quickviewbuttons">      
+      <button class="quickbutton checkcon" onclick="CheckConsciousness()"></button>
+      <button class="quickbutton checkpulse" onclick="CheckPulse()"></button>
+      <button class="quickbutton checktemp" onclick="CheckBodyTemp()"></button>
+    </div>
+  </div>
+</body>
+<style>
+
+  html {
+    overflow: hidden !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  body{
+    background-color: rgba(255, 255, 255, 0);  
+    caret-color: transparent;
+    font-family: Roboto;
+  }
+
+
+  
+  :root {
+    --primary-color: rgba(44, 49, 64, 0.9);
+    --secondary-color: rgb(52, 59, 78);
+
+    --third-color-text: #2debba;
+    --third-color: rgba(52, 234, 197, 0.3);
+    --third-color-highlight: rgba(167, 172, 186, 0.9);
+    --third-color-hover: rgba(52, 234, 197, 0.5);
+    --third-color-active: rgba(52, 234, 197, 0.7);
+
+    --tab-color: var(--primary-color);
+    --tab-hover-color: var(--primary-color);
+    --border-color: var(--primary-color);
+    --default-icon-color: rgb(128, 138, 167); 
+  }
+
+
+
+  .bounce-in {
+    animation: bounce-in 0.5s;
+  }
+  .bounce-out {
+    animation: bounce-in 0.5s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+  .bounce-in-small {
+    animation: bounce-in-small 0.5s;
+  }
+  @keyframes bounce-in-small {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @media (min-width: 1920px) {
+    :root {
+      --rectangle-width: 100vh;
+      --rectangle-height: 80vh;
+      --circle-diameter: 0px;
+      --circle-spacing: 20px;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    :root {
+      --rectangle-width: 100vh;
+      --rectangle-height: 80vh;
+      --circle-diameter: 0px;
+      --circle-spacing: 22px;
+    }
+  }
+
+  .topwrapper{
+    position: absolute;
+    /* background-color: red; */
+    width: 106vh;
+    height:70vh;
+    margin-top: 3.5vh;
+    z-index: 0;
+    background-image: radial-gradient(rgba(103, 103, 103, 0.1) 10%, transparent 10%), 
+                      radial-gradient(rgba(125, 125, 125, 0.1) 10%, transparent 10%);
+    background-position: 0 0, var(--circle-spacing) var(--circle-spacing);
+    background-size: var(--circle-spacing) var(--circle-spacing);
+  }
+
+  .wrapper{
+    width: 106.5vh;
+    height: 73vh;
+    background: radial-gradient(83% 83% at 50% 50%, rgba(67, 67, 67, 0.1), rgba(24, 24, 24, 0.7));
+    transition: background 0.35s ease;
+    background-color: var(--primary-color);
+    margin: auto;
+    margin-top: 9vh;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+    display: none;
+    border-radius: 1vh;
+  }
+
+
+
+  .rectangle {
+    width:50vh;
+    height:50vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--circle-spacing), 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(var(--circle-spacing), 1fr));
+    justify-items: center;
+    align-items: center;
+  }
+
+  .circle {
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    background-color: rgba(53, 53, 53, 0.722);
+    border-radius: 50%;
+  }
+
+  .topbar{
+    padding: 0.2vh;
+    font-size: 2vh;
+    color:rgb(255, 255, 255);
+    text-shadow: 0 0 0.5vh rgba(255, 255, 255, 0.5);
+    background-color: rgba(44, 49, 64, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    display: block;
+    text-align: center;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+    background: radial-gradient(83% 83% at 50% 50%, rgba(52, 58, 77, 0.9), rgba(24, 24, 24, 0.05));
+
+  }
+
+
+  .minitopbar{
+    width:100%;
+    height:2.25vh;
+    background: radial-gradient(83% 83% at 50% 50%, var(--primary-color), rgba(24, 24, 24, 0.5));
+    background-color: var(--primary-color);
+    padding-top: 0.5vh;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+  }
+
+
+  .but {
+    background-color: rgb(29, 30, 66);
+    width:15vh;
+    color: rgb(226, 226, 226);
+  }
+
+
+  .miniclosebutton{
+    cursor: pointer;
+    position: absolute;
+    color:red;
+    text-shadow: 0 0 0.5vh red;
+    padding-top: 0.3vh;
+    padding-bottom: 0.2vh;
+    padding-right: 0.5vh;
+    padding-left: 0.5vh;
+    margin-top: -0.25vh;
+    margin-left: 32.75vh;
+    font-size: 1.25vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    background: radial-gradient(83% 83% at 50% 50%, rgba(234, 52, 52, 0.7), rgba(83, 83, 83, 0.1)) !important;
+  }
+  .miniclosebutton:hover{
+    background: radial-gradient(83% 83% at 50% 50%, rgba(234, 52, 52, 0.9), rgba(83, 83, 83, 0.1)) !important;
+  }
+
+
+
+  .closebutton{
+    cursor: pointer;
+    position: absolute;
+    color:red;
+    text-shadow: 0 0 0.5vh red;
+    padding-top: 0.4vh;
+    padding-bottom: 0.2vh;
+    padding-right: 0.5vh;
+    padding-left: 0.5vh;
+    margin-top: 0.4vh;
+    margin-left: 42vh;
+    font-size: 1.5vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    background: radial-gradient(83% 83% at 50% 50%, rgba(234, 52, 52, 0.7), rgba(83, 83, 83, 0.1)) !important;
+  }
+
+  .closebutton:hover{
+    background: radial-gradient(83% 83% at 50% 50%, rgba(234, 52, 52, 0.9), rgba(83, 83, 83, 0.1)) !important;
+  }
+
+
+  .groupwrapper{
+    width: 35vh;
+    height: 45vh;
+    background: radial-gradient(83% 83% at 50% 50%, var(--primary-color), rgba(24, 24, 24, 0.5));
+    background-color: var(--primary-color);
+    margin-top: 7vh;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 10px 40px;
+    position: absolute;
+    margin-left: 35.8vh;
+  }
+
+  .groupcontent{
+    /* color: white; */
+    margin-top: 1vh;
+    margin-left: 2vh;
+    width: 31vh;
+    height: 4vh;
+    text-align: center;
+    font-size: 2.5vh;
+    background: radial-gradient(83% 83% at 50% 50%, var(--third-color), rgba(83, 83, 83, 0.1)) !important;
+    background-color: rgba(167, 172, 186, 0.9);
+    color:rgb(52, 234, 197);
+    text-shadow: 0 0 1vh var(--third-color-text);
+    padding: 0.2vh;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+  }
+
+  .groupcontent:hover{
+    cursor: pointer;
+    background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+    background-color: rgba(167, 172, 186, 0.9);
+  }
+
+  .groupcontent:active{
+    cursor: pointer;
+    background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+    background-color: rgba(167, 172, 186, 0.9);
+  }
+
+  .leftbox{
+    width:20vh;
+    height:30vh;
+    background-color: var(--primary-color);
+    margin-top: 2vh;
+    margin-left: 2vh;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 2px 8px;
+    
+    /* color:rgb(181, 163, 74) */
+  }
+
+  .messagelog{
+    width:71vh;
+    height:7vh;
+    background-color: var(--primary-color);
+    margin: auto;
+    margin-top: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 2px 8px;
+  }
+
+  .messagelogtext{
+    height:1.5vh;
+    width: 100%;
+    color: white;
+    font-size: 1vh;
+    background-color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+
+  .messageContainer{
+    overflow: scroll;
+    height: 5.5vh;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .messageContainer::-webkit-scrollbar { 
+    display: none;  
+  }
+
+  .message{
+    width: 100%;
+    height: 1.0vh;
+    /* margin-top: 0.6vw;
+    margin-left: 0.7vw; */
+    color:white;
+    font-size: 1vh;
+  }
+
+  .skellydiv{
+    width:70vh;
+    height:62vh;
+    margin: auto;
+    margin-top: 6vh;
+    margin-left: 21vh;
+  }
+
+  .ondmgSkelly{
+    width: 25vh;
+    height: 50vh;
+    position: relative;
+    display: none;
+  }
+
+
+  .skellybox {
+    top: 5vh;
+    left: 5vh;
+    width: 200vh;
+    height: 50vh;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    position: relative;
+    resize: both;
+    overflow: hidden;
+    display: none;
+  }
+
+  .box-header {
+    color:var(--third-color-text);
+    text-shadow: 0 0 1vh var(--third-color-text);
+    /* background: radial-gradient(83% 83% at 50% 50%, rgba(52, 234, 197, 0.9), rgba(83, 83, 83, 0.4)) !important; */
+    background: radial-gradient(83% 83% at 50% 50%, rgba(44, 49, 64, 1.0), rgba(24, 24, 24, 0.8)) !important;
+    background-color: rgba(167, 172, 186, 0.9);
+    font-weight: 600;
+    padding: 1vh 1vh;
+  }
+
+  .drag-handle {
+    cursor: pointer;
+  }
+
+  .dragging {
+    cursor: move !important;
+  }
+
+
+  .rightbox{
+    width:20vh;
+    height:30vh;
+    background-color: var(--primary-color);
+    margin-top: -33vh;
+    margin-left: 53vh;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 2px 8px;
+  }
+
+
+
+  /* BODY PARTS */
+
+  .body{
+    width:54vh;
+    margin: auto;
+    margin-left: 5vh;
+    margin-top: 0.7vh;
+    position: absolute;
+  }
+
+  .body2{
+    position: absolute;
+    width:54vh;
+    margin-left: 5vh;
+    margin-top: 0.7vh;
+  }
+
+  .neck{
+    position: absolute;
+    width: 5.2vh;
+    margin-top: 3.9vh;
+    margin-left: 29.5vh;
+  }
+
+  .head{
+    position: absolute;
+    width: 5.2vh;
+    margin-top: 3.9vh;
+    margin-left: 29.5vh;
+  }
+
+  .head2{
+    position: absolute;
+    width: 5.2vh;
+    margin-top: 3.9vh;
+    margin-left: 29.5vh;
+  }
+
+  .backgroundimg{
+    position: absolute;
+  }
+
+
+  .torso{
+    position: absolute;
+    width: 8.7vh;
+    margin-top: 10.9vh;
+    margin-left: 27.75vh;
+  }
+
+  .spine{
+    position: absolute;
+    width: 8.7vh;
+    margin-top: 10.8vh;
+    margin-left: 27.8vh;
+  }
+
+  .spine2{
+    position: absolute;
+    width: 8.7vh;
+    margin-top: 10.8vh;
+    margin-left: 27.8vh;
+  }
+
+  .torso2{
+    position: absolute;
+    width: 8.7vh;
+    margin-top: 10.9vh;
+    margin-left: 27.75vh;
+  }
+
+  .rarm{
+    position: absolute;
+    width: 6.84vh;
+    margin-top: 11.24vh;
+    margin-left: 22.6vh;
+  }
+
+  .rarmfracture{
+    position: absolute;
+    width: 6.4vh;
+    margin-top: 11.24vh;
+    margin-left: 22.6vh;
+  }
+
+  .rarmfracture2{
+    position: absolute;
+    width: 6.4vh;
+    margin-top: 11.24vh;
+    margin-left: 22.6vh;
+  }
+
+  .rarm2{
+    position: absolute;
+    width: 6.84vh;
+    margin-top: 11.24vh;
+    margin-left: 22.6vh;
+  }
+
+  .larm{
+    position: absolute;
+    width: 6.4vh;
+    margin-top: 11.24vh;
+    margin-left: 35vh;
+  }
+
+  .larmfracture{
+    position: absolute;
+    width: 6.4vh;
+    margin-top: 11.24vh;
+    margin-left: 35vh;
+  }
+
+  .larmfracture2{
+    position: absolute;
+    width: 6.4vh;
+    margin-top: 11.24vh;
+    margin-left: 35vh;
+  }
+
+  .larm2{
+    position: absolute;
+    width: 6.4vh;
+    margin-top: 11.24vh;
+    margin-left: 35vh;
+  }
+
+  .rleg{
+    position: absolute;
+    width: 5.8vh;
+    margin-top: 24.25vh;
+    margin-left: 26vh;
+  }
+
+  .rlegfracture{
+    position: absolute;
+    width: 5.8vh;
+    margin-top: 24.25vh;
+    margin-left: 26vh;
+  }
+
+  .rlegfracture2{
+    position: absolute;
+    width: 5.8vh;
+    margin-top: 24.25vh;
+    margin-left: 26vh;
+  }
+
+  .rleg2{
+    position: absolute;
+    width: 5.8vh;
+    margin-top: 24.25vh;
+    margin-left: 26vh;
+  }
+
+  .lleg{
+    position: absolute;
+    width: 5.85vh;
+    margin-top: 24.45vh;
+    margin-left: 32.2vh;
+  }
+
+  .llegfracture{
+    position: absolute;
+    width: 5.85vh;
+    margin-top: 24.45vh;
+    margin-left: 32.2vh;
+  }
+
+  .llegfracture2{
+    position: absolute;
+    width: 5.85vh;
+    margin-top: 24.45vh;
+    margin-left: 32.2vh;
+  }
+
+  .lleg2{
+    position: absolute;
+    width: 5.85vh;
+    margin-top: 24.45vh;
+    margin-left: 32.2vh;
+  }
+
+  .rarmtor{
+    position: absolute;
+    width: 2.34vh;
+    margin-top: 15.74vh;
+    margin-left: 25.8vh;
+  }
+
+  .larmtor{
+    position: absolute;
+    width: 2.34vh;
+    margin-top: 15.74vh;
+    margin-left: 36.06vh;
+  }
+
+  .rlegtor{
+    position: absolute;
+    width: 4.5vh;
+    margin-top: 27vh;
+    margin-left: 27.4vh;
+  }
+
+  .llegtor{
+    position: absolute;
+    width: 4.5vh;
+    margin-top: 27vh;
+    margin-left: 32.2vh;
+  }
+
+
+
+
+
+  
+.container{
+  width:31.9vh;
+  margin-left: -0.95vh;
+  position: absolute;
+  color: rgb(37, 37, 94);
+}
+
+.container2{
+  width:50vh;
+  margin-left: -0.9vh;
+  position: absolute;
+  color: rgb(37, 37, 94);
+  margin-top: 36vh;
+}
+
+.whiteBlock {
+  display:none;
+}
+
+
+
+.fancyTab {
+	text-align: center;
+  padding:0.72vh 0;
+  background-color: var(--tab-color);
+	/* box-shadow: 0 0 0 1px rgb(37, 37, 94); */
+	top:1.62vh;
+  transition: top 0.2s;
+  width:100%;
+  flex: 1 1 calc(36vh - 1.8vh);
+  text-align: center;
+  margin-bottom: 1.8vh;
+  font-size: 2.34vh;
+}
+.fancyTab.active {
+  top:0;
+  transition:top .2s;
+}
+.fancyTab a {
+  color:var(--default-icon-color);
+}
+.fancyTabs {
+	border-bottom:2px solid var(--border-color);
+}
+li.fancyTab a {
+  padding-top: 1.8vh;
+  top:-1.8vh;
+  padding-bottom:0;
+}
+:focus {
+	outline-color: transparent;
+}
+.fancyTab .fa {
+
+	padding: 0.36vh 0 0.36vh;
+  color:#020202;
+}
+.fancyTab a:focus {
+	outline:none;
+}
+.fancyTabContent {
+  border-color: transparent;
+  box-shadow: 0 -2px 0 -1px var(--secondary-color), 0 0 0 1px var(--secondary-color);
+  padding: 1.8vh 1.8vh 1.8vh;
+  position:relative;
+  /* background: radial-gradient(83% 83% at 50% 50%, var(--primary-color), rgba(24, 24, 24, 0.7));
+  background-color: var(--primary-color); */
+
+  background: radial-gradient(83% 83% at 50% 50%, var(--primary-color), rgba(24, 24, 24, 0.3));
+  background-color: var(--primary-color);
+  height:36vh;
+  width:30.3vh;
+}
+.fancyTabContent2 {
+  border-color: transparent;
+  box-shadow: 0 -2px 0 -1px var(--secondary-color), 0 0 0 1px var(--secondary-color);
+  padding: 1.8vh 1.8vh 1.8vh;
+  position:relative;
+  /* background: radial-gradient(83% 83% at 50% 50%, var(--primary-color), rgba(24, 24, 24, 0.7));
+  background-color: var(--primary-color); */
+  background-color: var(--primary-color);
+  height:18vh;
+}
+.nav-tabs > li.fancyTab.active > a, 
+.nav-tabs > li.fancyTab.active > a:focus,
+.nav-tabs > li.fancyTab.active > a:hover {
+	border-width:0;
+}
+.nav-tabs > li.fancyTab:hover {
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+	box-shadow: 0 0 0 1px var(--tab-hover-color);
+  box-shadow: -3px 0 3px rgba(0, 0, 0, 0.4), 3px 0 3px rgba(0, 0, 0, 0.4);
+}
+.nav-tabs > li.fancyTab.active:hover {
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  /* box-shadow: 1px 1px 0 1px var(--primary-color), 0 0px 0 1px var(--border-color), -1px 1px 0 0px var(--border-color) inset; */
+}
+.nav-tabs > li.fancyTab:hover a {
+	border-color:transparent;
+}
+.nav.nav-tabs .fancyTab a[data-toggle="tab"] {
+  background-color:transparent;
+  border-bottom:0;
+}
+.nav-tabs > li.fancyTab:hover a {
+  border-right: 1px solid transparent;
+}
+.nav-tabs > li.fancyTab > a {
+	margin-right:0;
+	border-top:0;
+  margin-bottom: -0.9vh;
+}
+.nav-tabs > li.fancyTab {
+	margin-right:0;
+	margin-bottom:0;
+}
+.nav-tabs > li.fancyTab:last-child a {
+  border-right: 1px solid transparent;
+}
+.nav-tabs > li.fancyTab.active:last-child {
+  border-right: 0px solid var(--border-color);
+	/* box-shadow: 0px 2px 0 0px var(--primary-color), 0px 0px 0 1px var(--border-color); */
+}
+.fancyTab:last-child {
+  box-shadow: 0 0 0 1px var(--border-color);
+  box-shadow: -3px 0 3px rgba(0, 0, 0, 0.3), 3px 0 3px rgba(0, 0, 0, 0.3);
+}
+.tabs .nav-tabs li.fancyTab.active a {
+	box-shadow:none;
+  top:0;
+  color:rgb(52, 234, 197);
+  text-shadow: 0 0 0.5vh rgb(45, 235, 186);
+}
+.fancyTab.active {
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+	/* box-shadow: 1px 1px 0 1px var(--primary-color), 0 0px 0 1px var(--border-color), -1px 1px 0 0px var(--border-color) inset; */
+  padding-bottom:1.26vh;
+}
+.arrow-down {
+	display:none;
+  width: 0;
+  height: 0;
+  border-left: 1.53vh solid transparent;
+  border-right: 1.53vh solid transparent;
+  border-top: 1.62vh solid var(--border-color);
+  position: absolute;
+  top: -1px;
+  left: calc(50% - 1.53vh);
+}
+.arrow-down-inner {
+  width: 0;
+  height: 0;
+  border-left: 1.35vh solid transparent;
+  border-right: 1.35vh solid transparent;
+  border-top: 12px solid rgba(61, 68, 89, 0.816);
+  position: absolute;
+  top: -1.62vh;
+  left: -1.296vh;
+}
+.fancyTab.active .arrow-down {
+  display: block;
+}
+.tab-pane{
+  position: relative;
+  overflow: hidden;
+  width:30.6vh;
+  margin-left: -1.8vh;
+  padding-bottom:1.8vh;
+}
+.pane{
+  position: relative;
+  overflow: hidden;
+  width:30.6vh;
+  text-align: center;
+  margin-left: -2.88vh;
+  padding-bottom: 1.8vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.interactionbutton{
+  position: relative;
+  width:27vh;
+  height:2.52vh;
+  font-size: 1.26vh;
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  border-radius: 3px;
+  margin-left: 1.8vh;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px -1px, rgba(0, 0, 0, 0.6) 0px 1px 3px -1px;
+  border: 0px;
+  margin-bottom: 0.9vh;
+  color:rgb(52, 234, 197);
+  text-shadow: 0 0 0.5vh var(--third-color-text);
+}
+
+.interactionbutton:hover{
+
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+.interactionbutton:active{
+  /* background: radial-gradient(83% 83% at 50% 50%, rgba(52, 234, 197, 0.6), rgba(83, 83, 83, 0.1)); */
+  cursor: pointer;
+  filter: brightness(1.4);
+}
+
+
+.activity {
+  width:27vh;
+  height:2.52vh;
+  font-size: 1.26vh;
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  margin-top: 0.9vh;
+  border-radius: 3px;
+  margin-left: -30vh;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px -1px, rgba(0, 0, 0, 0.6) 0px 1px 3px -1px;
+  border: 0px;
+  color:white;
+  transition: margin 1.0s ease-in-out,
+  background-color 1.0s ease-in-out;
+}
+
+
+
+
+.activity.show{
+  margin-left: 1.1vh;
+  background-color: var(--third-color-show);
+  display: block;
+}
+
+.activity:hover{
+  cursor: pointer;
+  color:rgb(135, 141, 196);
+
+  /* background: var(--third-color-hover); */
+  transition: all 0.2s ease-out;
+}
+
+.activity:active{
+  background: var(--third-color-active);
+  color:rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.menuTitle{
+  text-align: center;
+  color: white;
+  font-size: 2.16vh;
+  margin-bottom: 1.8vh;
+}
+
+
+.tab{
+  box-shadow: -3px 0 3px rgba(0, 0, 0, 0.3), 3px 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.uni .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.col{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.button-disabled {
+  pointer-events: none;
+  opacity: 0.6; 
+  background: radial-gradient(83% 83% at 50% 50%, var(--primary-color), rgba(23, 23, 23, 0.552)) !important;
+  color: white;
+  text-shadow: 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dmgassestitle{
+  font-size: 2.34vh;
+  color: white;
+  text-align: center;
+}
+
+.rightboxbar{
+  padding-top: 0.54vh;
+  width:100%;
+  height:10%;
+  background-color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.dmgassesinnertitle{
+  font-size: 2.25vh;
+  color: white;
+  margin-left: 1.8vh;
+  padding-bottom: 1.8vh;
+}
+
+.dmgassesinnercontent{
+  font-size: 1.5vh;
+  color: white;
+  margin-left: 1.2vh;
+  line-height: 1.5vh;
+}
+
+
+
+
+.rarm:hover{
+  cursor: pointer;
+}
+.larm:hover{
+  cursor: pointer;
+}
+.rleg:hover{
+  cursor: pointer;
+}
+.lleg:hover{
+  cursor: pointer;
+}
+.torso:hover{
+  cursor: pointer;
+}
+.head:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* VISUAL EFFECTS */
+
+
+#painScreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  pointer-events: none;
+  transition: background 0.5s ease-in-out;
+}
+
+
+/* Death Screen */
+
+#deathscreen{
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  box-shadow: inset 0 0 4vh 4vh rgba(255, 0, 0, 0.1), inset 0 0 1vh 1vh rgba(255, 0, 0, 0.1);
+}
+
+
+#countdown {
+  position: relative;
+  margin: auto;
+  margin-top: 60vh;
+  height: 62vh;
+  width: 62vh;
+  text-align: center;
+}
+
+#countdown-number {
+  display: inline-block;
+  line-height: 34vh;
+  font-size: 3.5vh;
+  font-family: Orbitron;
+  color: rgb(255, 89, 89);
+  text-shadow:
+    1px 1px 0 rgb(255, 43, 43),
+    -1px 1px 0 rgb(255, 43, 43),
+    1px -1px 0 rgb(255, 43, 43),
+    -1px -1px 0 rgb(255, 43, 43),
+    1px 0px 0 rgb(255, 43, 43),
+    -1px 0px 0 rgb(255, 43, 43),
+    0px 1px 0 rgb(255, 43, 43),
+    0px -1px 0 rgb(255, 43, 43),
+    0 0 7px red,
+    0 0 10px red;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62.5vh;
+  height: 62.5vh;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg .circle {
+  stroke-dasharray: 44vh;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 0.5vh;
+  stroke: red;
+  fill: none;
+  animation: countdown 10s linear infinite forwards;
+  filter: url(#red-glow);
+}
+
+svg .circle2 {
+  stroke-dasharray: 44vh;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 6px;
+  stroke: rgba(0, 0, 0, 0.63);
+  fill: none;
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 44vh;
+  }
+}
+
+#deathtext{
+  font-size: 2.5vh;
+  color: rgb(251, 126, 126);
+  margin-top: 3vh;
+  text-align: center;
+  text-shadow:
+    1px 1px 0 rgb(255, 43, 43),
+    -1px 1px 0 rgb(255, 43, 43),
+    1px -1px 0 rgb(255, 43, 43),
+    -1px -1px 0 rgb(255, 43, 43),
+    1px 0px 0 rgb(255, 43, 43),
+    -1px 0px 0 rgb(255, 43, 43),
+    0px 1px 0 rgb(255, 43, 43),
+    0px -1px 0 rgb(255, 43, 43),
+    0 0 7px red,
+    0 0 10px red,
+    0 0 21px red;
+}
+
+.emsbutton{
+  font-size: 2vh;
+  color: rgb(251, 126, 126);
+  margin-top: -35vh;
+  text-align: center;
+  text-shadow:
+        1px 1px 0 rgb(255, 43, 43),
+        -1px 1px 0 rgb(255, 43, 43),
+        1px -1px 0 rgb(255, 43, 43),
+        -1px -1px 0 rgb(255, 43, 43),
+        1px 0px 0 rgb(255, 43, 43),
+        -1px 0px 0 rgb(255, 43, 43),
+        0px 1px 0 rgb(255, 43, 43),
+        0px -1px 0 rgb(255, 43, 43),
+        0 0 7px red,
+      0 0 10px red,
+      0 0 21px red;
+}
+
+.topwoundbox{
+  width:25vh;
+  height:2.7vh;
+  border-top: 2px solid white;
+  background-color: rgb(25, 25, 39);
+  border-radius: 3px;
+  color: white;
+  font-size: 2.16vh;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+}
+
+.woundtext{
+  color: white;
+  font-size: 1.5vh;
+  padding-top: 0.9vh;
+  text-shadow: 0 0 0.5vh white;
+  width:25vh;
+  height:10.5vh;
+  overflow: scroll;
+  overflow-x: hidden; 
+  overflow-y: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  text-align: left; 
+}
+
+.woundboxtitle{
+  padding: 0.2vh;
+  font-size: 2vh;
+  color:rgb(52, 234, 197);
+  text-shadow: 0 0 1vh var(--third-color-text);
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color), rgba(83, 83, 83, 0.1)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  display: block;
+  text-align: center;
+}
+
+
+.woundtext::-webkit-scrollbar { 
+  display: none;  
+}
+
+.woundtextborder{
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width:23.2vh;
+  margin-bottom: 0.9vh;
+  margin-left: 0.63vh;
+}
+
+
+.woundbox1{
+  width:25vh;
+  height:14vh;
+  margin-top: -61vh;
+  margin-left: 10.5vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  border-top: 0.1vh solid white;
+}
+
+
+.woundbox2{
+  width:25vh;
+  height:14vh;
+  margin-top: 4.7vh;
+  margin-left: 10.5vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  border-top: 0.1vh solid white;
+}
+
+.woundbox3{
+  width:25vh;
+  height:14vh;
+  margin-top: 4.5vh;
+  margin-left: 10.5vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  border-top: 0.1vh solid white;
+}
+
+.woundbox4{
+  width:25vh;
+  height:14vh;
+  margin-top: -52vh;
+  margin-left: 71.1vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  border-top: 0.1vh solid white;
+}
+
+
+.woundbox5{
+  width:25vh;
+  height:14vh;
+  margin-top: 4.7vh;
+  margin-left: 71.1vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  border-top: 0.1vh solid white;
+}
+
+.woundbox6{
+  width:25vh;
+  height:14vh;
+  margin-top: 4.7vh;
+  margin-left: 71.1vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  border-top: 0.1vh solid white;
+}
+
+.border1{
+  border-top: 0.1vh solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.808);
+  width:14.4vh;
+  transform: rotate(20deg);
+  margin-left: 35vh;
+  margin-top: -58.8vh;
+}
+
+.border2{
+  border-top: 0.1vh solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.808);
+  width:7.2vh;
+  transform: rotate(15deg);
+  margin-left: 35.3vh;
+  margin-top: 17.2vh;
+}
+
+.border3{
+  border-top: 0.1vh solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.808);
+  width:9vh;
+  transform: rotate(-15deg);
+  margin-left: 35.3vh;
+  margin-top: 16.25vh;
+}
+
+.border4{
+  border-top: 0.1vh solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.808);
+  width:16.2vh;
+  transform: rotate(-45deg);
+  margin-left: 57.3vh;
+  margin-top: -31.2vh;
+}
+
+.border5{
+  border-top: 0.1vh solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.808);
+  width:7.2vh;
+  transform: rotate(-15deg);
+  margin-left: 64.0vh;
+  margin-top: 13.8vh;
+}
+
+.border6{
+  border-top: 0.1vh solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.808);
+  width:9vh;
+  transform: rotate(15deg);
+  margin-left: 62.2vh;
+  margin-top: 16.45vh;
+}
+
+
+.namebox{
+  width:36vh;
+  height: 3.6vh;
+  margin-top: -56.2vh;
+  margin-left: 35vh;
+  text-align: center;
+  color: white;
+  font-size: 2.7vh;
+  text-shadow: 0 0 0.5vh rgba(255, 255, 255, 0.5);
+}
+
+.groupbutton{
+  width:2.7vh;
+  height: 2.7vh;
+  margin-top: -3.6vh;
+  margin-left: 0.9vh;
+  cursor: pointer;
+  background-color: rgb(30, 30, 51);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  color:rgb(52, 234, 197);
+  text-shadow: 0 0 1vh var(--third-color-text);
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.groupbutton:hover{
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.groupbutton:active{
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-active), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.infobox{
+  width:30.6vh;
+  height:10vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05)) !important;
+  background-color: rgba(167, 172, 186, 0.9);
+  margin-left: 38vh;
+  margin-top: 53.2vh;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+}
+
+.paddingbox{
+  padding-left: 0.36vh;
+  padding-right: 0.36vh;
+}
+
+.triageText{
+  font-size: 2.25vh;
+  color: rgb(219, 219, 219);
+  /* font-weight: 600; */
+  text-align: center;
+}
+
+.painbox{
+  border-top: 1px solid rgba(255, 255, 255, 0.192);
+  font-size: 1.5vh;
+  color: rgb(219, 219, 219);
+  text-shadow: 0 0 0.5vh white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bloodbox{
+  border-top: 1px solid rgba(255, 255, 255, 0.192);
+  font-size: 1.5vh;
+  color: rgb(219, 219, 219);
+  text-shadow: 0 0 0.5vh white;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.refillbloodbox{
+  border-top: 1px solid rgba(255, 255, 255, 0.192);
+  font-size: 1.5vh;
+  color: rgb(219, 219, 219);
+  text-shadow: 0 0 0.5vh white;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.refillsalinebox{
+  border-top: 1px solid rgba(255, 255, 255, 0.192);
+  font-size: 1.5vh;
+  color: rgb(219, 219, 219);
+  display: flex;
+  justify-content: space-between; 
+}
+
+.infoboxtext{
+  text-align: right;
+}
+
+.logbutton{
+  width:3.6vh;
+  height:3.6vh;
+  margin-left: 101vh;
+  margin-top: -41.2vh;
+  background-color: rgb(30, 30, 51);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  cursor: pointer;
+  color:rgb(52, 234, 197);
+  text-shadow: 0 0 1vh var(--third-color-text);
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.logbutton:hover{
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.logbutton:active{
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-active), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.actionbutton{
+  width:3.6vh;
+  height:3.6vh;
+  margin-left: 1.8vh;
+  margin-top: -3.6vh;
+  background-color: rgb(30, 30, 51);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  cursor: pointer;
+  color:rgb(52, 234, 197);
+  text-shadow: 0 0 1vh var(--third-color-text);
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.actionbutton:hover{
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.actionbutton:active{
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-active), rgba(83, 83, 83, 0.1)) !important;
+}
+
+
+.patientlog{
+  width:30.6vh;
+  height:73vh;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(67, 67, 67, 0.1), rgba(24, 24, 24, 0.7));
+  background-color: var(--primary-color);
+  margin-top: -73vh;
+  margin-left: 115%;
+  border-radius: 5px;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.transpatientlog{
+  margin-left: 80.5%;
+  transition: all 0.5s ease-in-out;
+}
+
+.patientlogtop{
+  height:9vh;
+  width:30.6vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(67, 67, 67, 0.1), rgba(24, 24, 24, 0.7));
+  background-color: var(--primary-color);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+  font-size: 4.5vh;
+  color:white;
+  text-align: center;
+  padding-top: 1.44vh;
+}
+
+.patientlogcontent{
+  font-size: 1.8vh;
+  width:30.6vh;
+  height:63vh;
+  font-size: 1.5vh;
+  color: white;
+  text-shadow: 0 0 0.5vh white;
+  padding-top: 0.9vh;
+  padding-left: 0.9vh;
+  padding-right: 0.9vh;
+  overflow: scroll;
+  overflow-x: hidden; 
+  overflow-y: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+.patientlogcontent::-webkit-scrollbar { 
+  display: none;  
+}
+
+.patientlogtext{
+  padding: 0.5vh;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(222, 222, 222, 0.158), rgba(152, 152, 152, 0.05)) !important;
+  background-color: rgba(167, 172, 186, 0.7);
+}
+
+.actionbox{
+  width:30.6vh;
+  height:73vh;
+  background: radial-gradient(83% 83% at 50% 50%, rgba(67, 67, 67, 0.1), rgba(24, 24, 24, 0.7));
+  background-color: var(--primary-color);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+  margin-top: -73vh;
+  margin-left: -30%;
+  border-radius: 5px;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.transactionbox{
+  margin-left: 2.25%;
+  transition: all 0.5s ease-in-out;
+}
+
+.quickview{
+  color: white;
+  /* text-shadow: 0 0 0.5vh white; */
+  font-size: 3.6vh;
+  margin-top: 43vh;
+  text-align: center;
+}
+
+.quickviewbuttons{
+  width:30.6vh;
+  height:16.2vh;
+}
+
+.quickbutton{
+  color:rgb(255, 255, 255);
+
+
+
+  width:27vh;
+  margin-left: 1.8vh;
+  margin-top: 1.1vh;
+  height:3.6vh;
+  border: 0px;
+  font-size: 1.44vh;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+  color:rgb(52, 234, 197);
+  text-shadow: 0 0 1vh var(--third-color-text);
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color), rgba(83, 83, 83, 0.1)) !important;
+}
+
+.quickbutton:hover{
+  background: radial-gradient(83% 83% at 50% 50%, var(--third-color-hover), rgba(83, 83, 83, 0.1)) !important;
+}
+
+
+
+
+
+
+  
+</style>
+<script>
+
+  var DamageList = [];
+  var invItems;
+
+  var activeBodyPart = "Head"
+  var activeNavbar = "Medical"
+  var BodyCheckInit = false;
+  var loading = true;
+  var countdown = 0;
+  var emsnotified = false;
+  var loopid = null;
+  var nearbyPlayers;
+  var lang;
+  var startUpPage = false
+  var currentPlayerId = null;
+
+  var activeDeathScreen = 3;
+
+  var bodypartTranslations = {}
+  var woundTranslations = {}
+
+  var lastLogOpen = false;
+  var openLog = false;
+
+  var skellyIsOpen = false
+  var editSkellyIsOpen = false
+
+  var skellyWidth = '20vh'
+  var skellyPos = [0.0, 0.0]
+
+  var medicationData = []
+  var castsData = []
+
+  // var bodyPartBoneTranslation = {
+  //   'Torso': 'SPINE',
+  //   'Head': 'NECK', 
+  //   'Rleg': 'RLEG',
+  //   'Lleg': 'LLEG',
+  //   'Larm': 'LARM',
+  //   'Rarm': 'RARM',
+  // }
+
+  function slidePatientLog() {
+    var element = document.getElementById('patientlog');
+    if (openLog == false) {
+      openLog = true;
+      lastLogOpen = true;
+      element.classList.add('transpatientlog');
+    } else {
+      openLog = false;
+      lastLogOpen = false;
+      element.classList.remove('transpatientlog');
+    }
+
+  }
+  var lastActionOpen = false;
+  var openLog2 = false;
+  function slideActionbox() {
+    var element = document.getElementById('actionbox');
+    if (openLog2 == false) {
+      openLog2 = true;
+      lastActionOpen = true;
+      element.classList.add('transactionbox');
+    } else {
+      openLog2 = false;
+      lastActionOpen = false;
+      element.classList.remove('transactionbox');
+    }
+
+  }
+
+
+
+
+  function Group() {
+    $.post('https://osp_ambulance/RetrieveNearbyPlayers', JSON.stringify({}));
+  }
+
+  function MiniCloseButton() {
+    $(".groupwrapper").remove();
+  }
+
+  function LoadPlayer(PlayerId) {
+
+    setTimeout(function() {
+      ClearContents();
+      var headImages = document.getElementsByClassName('head');
+      headImages[0].setAttribute('src', 'img/head.png');
+
+      var torsoImages = document.getElementsByClassName('torso');
+      torsoImages[0].setAttribute('src', 'img/torso.png');
+
+      var rarmImages = document.getElementsByClassName('rarm');
+      rarmImages[0].setAttribute('src', 'img/arm_right.png');
+
+      var rlegImages = document.getElementsByClassName('rleg');
+      rlegImages[0].setAttribute('src', 'img/leg_right.png');
+
+      var larmImages = document.getElementsByClassName('larm');
+      larmImages[0].setAttribute('src', 'img/arm_left.png');
+
+      var llegImages = document.getElementsByClassName('lleg');
+      llegImages[0].setAttribute('src', 'img/leg_left.png');
+      $('.wrapper').hide();
+
+      var larmtor = document.getElementsByClassName('larmtor');
+      larmtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+      var rarmtor = document.getElementsByClassName('rarmtor');
+      rarmtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+      var llegtor = document.getElementsByClassName('llegtor');
+      llegtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+      var rlegtor = document.getElementsByClassName('rlegtor');
+      rlegtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+    }, 200);
+    $('.wrapper').fadeOut();
+    $('.patientlog').fadeOut();
+    var element = document.getElementById('patientlog');
+    element.classList.remove('transpatientlog');
+    $('.actionbox').fadeOut();
+    var element = document.getElementById('actionbox');
+    element.classList.remove('transactionbox');
+    currentPlayerId = PlayerId;
+    setTimeout(function() {
+      $.post('https://osp_ambulance/LoadPlayer', JSON.stringify({
+        PlayerId: PlayerId
+      }));
+    }, 400);
+  }
+
+  function ContinueGroup(playerList) {
+    $(".groupwrapper").remove();
+    var input =  '<div class="groupwrapper bounce-in">'+
+    '<div class="minitopbar">'+
+      '<i class="fa-solid fa-xmark miniclosebutton" onclick="MiniCloseButton()"></i>'+
+    '</div>';
+    for (var j = 0; j < playerList.length; j++) {
+      if (playerList[j].id != null){
+        input +='<div class="groupcontent" onclick="LoadPlayer(' + playerList[j].id  +')">' +lang.update1.id+playerList[j].id+' '+playerList[j].charactername+ '</div>';
+      }
+    }
+    input += '</div>';
+    $(".wrapper").append(input);
+  }
+
+  window.addEventListener('message', function(event) {
+    data = event.data;
+
+    if (lang == null) {
+      $.post('https://osp_ambulance/GetLang', JSON.stringify({}));
+    }
+
+    if (data.type == 'lang'){
+      lang = JSON.parse(data.translations)
+      bodypartTranslations = {
+        "Head": lang.ui.head.toUpperCase(),
+        "Torso": lang.ui.torso.toUpperCase(),
+        "Rarm": lang.ui.right_arm.toUpperCase(),
+        "Larm": lang.ui.left_arm.toUpperCase(),
+        "Rleg": lang.ui.right_leg.toUpperCase(),
+        "Lleg": lang.ui.left_leg.toUpperCase(),
+      }
+
+      woundTranslations = {
+        "abrasion": lang.wounds.abrasion,
+        "avulsion": lang.wounds.avulsion,
+        "contusion": lang.wounds.contusion,
+        "crush": lang.wounds.crush,
+        "cut": lang.wounds.cut,
+        "laceration": lang.wounds.laceration,
+        "lowvelocitywound": lang.wounds.lowvelocitywound,
+        "mediumvelocitywound": lang.wounds.mediumvelocitywound,
+        "highvelocitywound": lang.wounds.highvelocitywound,
+        "velocitywound": lang.wounds.velocitywound,
+        "puncturewound": lang.wounds.puncturewound,
+        "burn": lang.wounds.burn,
+      }
+
+
+      document.getElementsByClassName("currentbodypart")[0].innerHTML = lang.ui.head.toUpperCase()
+      document.getElementsByClassName("headtxt")[0].innerHTML = lang.body.head;
+      document.getElementsByClassName("rarmtxt")[0].innerHTML = lang.body.rarm;
+      document.getElementsByClassName("rlegtxt")[0].innerHTML = lang.body.rleg;
+      document.getElementsByClassName("torsotxt")[0].innerHTML = lang.body.torso;
+      document.getElementsByClassName("larmtxt")[0].innerHTML = lang.body.larm;
+      document.getElementsByClassName("llegtxt")[0].innerHTML = lang.body.lleg;
+      document.getElementsByClassName("patientlogtop")[0].innerHTML = lang.update1.patient_log;
+      document.getElementsByClassName("checkcon")[0].innerHTML = lang.buttons.check_concisousness;
+      document.getElementsByClassName("checkpulse")[0].innerHTML = lang.buttons.check_pulse;
+      document.getElementsByClassName("checktemp")[0].innerHTML = lang.buttons.check_body_temp;
+      document.getElementsByClassName("quickview")[0].innerHTML = lang.update1.quick_actions;
+      document.getElementsByClassName("pain")[0].innerHTML = lang.update1.pain;
+      document.getElementsByClassName("bloodloss")[0].innerHTML = lang.update1.bloodloss;
+      document.getElementsByClassName("refillblood")[0].innerHTML = lang.update1.refillblood;
+    }
+
+    if (data.medicationData) {
+      medicationData = JSON.parse(data.medicationData)
+    }
+
+    if (data.castsData) {
+      castsData = JSON.parse(data.castsData)
+    }
+
+    if (data.players) {
+      nearbyPlayers = JSON.parse(data.players)
+      ContinueGroup(nearbyPlayers);
+    }else{
+      nearbyPlayers = null;
+    }
+
+
+
+    if (data.screenx) {
+      var myElement = document.getElementById('myElement');
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+      var relativeX = data.screenx;
+      var relativeY = data.screeny; 
+
+      // Calculate absolute coordinates
+      var absoluteX = relativeX * screenWidth;
+      var absoluteY = relativeY * screenHeight;
+
+      myElement.style.left = absoluteX + 'px';
+      myElement.style.top = absoluteY + 'px';
+
+    }
+
+    if (data.blackout){
+      if (data.blackout == 1){
+        var screen = document.getElementById("painScreen");
+        screen.style.display = "block";
+        $("#painScreen").css("background", "radial-gradient(circle, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.8) 150%, rgba(0,0,0,0.9) 100%)")
+        .fadeIn(500)
+        $(painScreen).fadeIn(500);
+      }else if (data.blackout == 2){
+        blackoutElement();
+      }else if (data.blackout == 3){
+        reverseblackoutElement();
+      }else if (data.blackout == 4){
+        hidescreenElement()
+      }
+
+    }else if (data.pain){
+      if (typeof data.pain === 'number'){
+        var screen = document.getElementById("painScreen");
+        screen.style.display = "block";
+        if (data.pain < 20) {
+          painElement(400)
+        } else if (data.pain > 20) {
+          painElement(100)
+        }
+      }else if (data.pain == 'close'){
+        hidescreenElement()
+      }
+
+    }
+
+    if (data.rapidheartbeat) {
+      var count = 0;
+      var audio = new Audio("rapidheartbeat.wav");
+      audio.volume = 0.8;
+      function loopFunction() {
+        if (count < 70) {
+          count++;
+          setTimeout(loopFunction, 700);
+          audio.play();
+        }
+      }
+      loopFunction();
+    }else if (data.slowheartbeat) {
+      var count = 0;
+      var audio = new Audio("slowheartbeat.wav");
+      audio.volume = 0.8;
+      function loopFunction() {
+        if (count < 40) {
+          count++;
+          setTimeout(loopFunction, 1500);
+          audio.play();
+        }
+      }
+      loopFunction();
+    }
+
+    if (data.fractureSound) {
+      var audio = null
+      if (data.fractureSound == 1) {
+        audio = new Audio("fracture1.wav");
+      } else{
+        audio = new Audio("fracture2.wav");
+      }
+      audio.volume = 0.8;
+      audio.play();
+    }
+
+    if (data.xraySound){
+      var audio = new Audio("xray.wav");
+      audio.volume = 0.8;
+      audio.play();
+    }
+
+
+    if (data.death) {
+      var respawntime = data.respawntime;
+      var laststandtime = data.laststandtime;
+      var alreadyactivetimer = false;
+      skellyIsOpen = false
+      $('.skellybox').remove();
+      $('.ondmgSkelly').remove();
+      if (data.death == 1 && alreadyactivetimer == false){
+        if (activeDeathScreen == 1){
+          return;
+        }
+        activeDeathScreen = 1;
+          alreadyactivetimer = true;
+          var input = '<div id="deathscreen">'+
+            '<div id="deathtext">'+ lang.death.medically_dead +'</div>'+
+            '<div id="countdown">'+
+              '<div id="countdown-number"></div>'+
+              '<svg>'+
+                '<defs>'+
+                  '<filter id="red-glow" x="-50%" y="-50%" width="200%" height="200%">'+
+                    '<feGaussianBlur stdDeviation="5" result="coloredBlur"/>'+
+                    '<feMerge>'+
+                      '<feMergeNode in="coloredBlur"/>'+
+                      '<feMergeNode in="SourceGraphic"/>'+
+                    '</feMerge>'+
+                  '</filter>'+
+                '</defs>'+
+                '<circle class="circle2" r="7vh" cx="45.2vh" cy="31.5vh"></circle>'+
+                '<circle class="circle" r="7vh" cx="45.2vh" cy="31.5vh"></circle>'+
+              '</svg>'+
+            '</div>'+
+          '</div>';
+          $("body").append(input);
+          countdown = laststandtime;
+          var circle = document.querySelector(".circle");
+          circle.style.animationDuration = laststandtime+"s"; 
+          initiatecounter() 
+      }else if (data.death == 2){
+        if (activeDeathScreen == 2){
+          return;
+        }
+        activeDeathScreen = 2;
+        $("#deathscreen").remove();
+        alreadyactivetimer = true;
+        clearInterval(loopid);
+        var input = '<div id="deathscreen">'+
+          '<div id="deathtext">'+lang.death.respawn_in+'</div>'+
+          '<div id="countdown">'+
+            '<div id="countdown-number"></div>'+
+            '<svg>'+
+              '<defs>'+
+                  '<filter id="red-glow" x="-50%" y="-50%" width="200%" height="200%">'+
+                    '<feGaussianBlur stdDeviation="5" result="coloredBlur"/>'+
+                    '<feMerge>'+
+                      '<feMergeNode in="coloredBlur"/>'+
+                      '<feMergeNode in="SourceGraphic"/>'+
+                    '</feMerge>'+
+                  '</filter>'+
+                '</defs>'+
+                '<circle class="circle2" r="7vh" cx="45.2vh" cy="31vh"></circle>'+
+                '<circle class="circle" r="7vh" cx="45.2vh" cy="31vh"></circle>'+
+            '</svg>'+
+          '</div>'+
+        '</div>';
+        $("body").append(input);
+        countdown = respawntime;
+        var circle = document.querySelector(".circle");
+        circle.style.animationDuration = respawntime+"s"; 
+        initiatecounter()
+        if (emsnotified == false){
+          var input = '<div class="emsbutton">'+ lang.death.notif_ems+'</div>';
+          $("#deathscreen").append(input);
+        } else{
+          var input = '<div class="emsbutton">'+lang.death.notified_ems+'</div>';
+          $("#deathscreen").append(input);
+        }
+
+        setTimeout(function() {
+          countdown = 0;
+          var circle = document.querySelector(".circle");
+          if (circle != null) {
+            circle.style.animationDuration = "0s";
+          }else{
+            return
+          }
+          var txt = document.getElementById("deathtext");
+          txt.innerHTML = lang.update1.hold_to_respawn;
+        }, respawntime*1000);
+
+      }else if (data.death == 3){
+        activeDeathScreen = 3;
+        $("#deathscreen").remove();
+        alreadyactivetimer = false;
+        clearInterval(loopid);
+      }
+    }
+
+    if (data.emsnotif){
+      if (data.emsnotif == 1){
+        var input = '<div class="emsbutton">'+lang.death.notif_ems+'</div>';
+        $("#deathscreen").append(input);
+        emsnotified = false;
+      } else if (data.emsnotif == 2){
+        emsnotified = true;
+        var ems = document.querySelector(".emsbutton");
+        ems.innerHTML = lang.death.notified_ems;
+      } else if (data.emsnotif == 3){
+        $(".emsbutton").remove();
+        emsnotified = false;
+      }
+    }
+
+    if (data.invItems) {
+      invItems = JSON.parse(data.invItems);
+    }
+
+
+    if (data.editSkelly != undefined) {
+      editSkellyIsOpen = data.editSkelly
+      
+      if (data.skellyWidth != undefined){
+        skellyWidth = data.skellyWidth
+      }
+      
+      $('.skellybox').remove();
+      $('.ondmgSkelly').remove();
+      var input =
+      '<div class="skellybox" data-draggable="true" data-resizable="true">'+
+        '<div class="box-header drag-handle" data-drag-handle="true">DRAG HERE</div>'+
+        '<div class="ondmgSkelly">'+
+            '<img class="backgroundimg" src="img/background.png">'+
+            '<img class="head2" src="img/head.png">'+
+            '<img class="torso2" src="img/torso.png">'+
+            '<img class="rarm2" src="img/arm_right.png">'+
+            '<img class="larm2" src="img/arm_left.png">'+
+            '<img class="rleg2" src="img/leg_right.png">'+
+            '<img class="lleg2" src="img/leg_left.png">'+
+          '</div>'
+      '</div>';
+      $("body").append(input);
+
+
+
+      var div = document.querySelector(".skellybox");
+      div.style.width = skellyWidth; 
+      div.style.left = skellyPos[0]+'px';
+      div.style.top = skellyPos[1]+'px';
+
+      setupResizable();
+      setupDraggable();
+
+      if (editSkellyIsOpen) {
+        var screen = document.getElementsByClassName("skellybox");
+        screen[0].style.display = "block";
+        var screen = document.getElementsByClassName("ondmgSkelly");
+        screen[0].style.display = "block";
+      } else {
+        $('.skellybox').remove();
+      }
+    }
+
+    if (data.onDamage){
+      $('.skellybox').remove();
+      $('.ondmgSkelly').remove();
+      var input =
+      '<div class="ondmgSkelly">'+
+        '<img class="backgroundimg" src="img/background.png">'+
+        '<img class="head2" src="img/head.png">'+
+        '<img class="torso2" src="img/torso.png">'+
+        '<img class="rarm2" src="img/arm_right.png">'+
+        '<img class="larm2" src="img/arm_left.png">'+
+        '<img class="rleg2" src="img/leg_right.png">'+
+        '<img class="lleg2" src="img/leg_left.png">'+
+      '</div>';
+      $("body").append(input);
+
+      var div = document.querySelector(".ondmgSkelly");
+      if (skellyPos == undefined){
+        skellyPos = [0.0, 0.0]
+      }
+      div.style.width = skellyWidth; 
+      div.style.left = skellyPos[0]+'px';
+      div.style.top = (skellyPos[1]+40)+'px';
+
+      const box = document.querySelector('.ondmgSkelly');
+      const style = getComputedStyle(box);
+      var width = parseFloat(style.width) * 0.05
+      function updateSkellySize(ratio) {
+        $('.ondmgSkelly').css({
+          'width': 75 * ratio + 'vh',
+          'height': 90 * ratio + 'vh',
+        });
+        $('.backgroundimg').css({
+          'width': 54 * ratio + 'vh',
+          'margin-top': 0.7 * ratio + 'vh',
+          'margin-left': ((0) * ratio) - 15*ratio + 'vh' 
+        });
+        $('.head2').css({
+            'width': 5.2 * ratio + 'vh',
+            'margin-top': 3.9 * ratio + 'vh',
+            'margin-left': (9.5 * ratio) + 'vh' 
+        });
+        $('.torso2').css({
+            'width': 8.7 * ratio + 'vh',
+            'margin-top': 10.9 * ratio + 'vh',
+            'margin-left': (7.75 * ratio ) + 'vh'
+        });
+        $('.rarm2').css({
+            'width': 6.84 * ratio + 'vh',
+            'margin-top': 11.24 * ratio + 'vh',
+            'margin-left': (2.6 * ratio) + 'vh' 
+        });
+        $('.larm2').css({
+            'width': 6.4 * ratio + 'vh',
+            'margin-top': 11.24 * ratio + 'vh',
+            'margin-left': (15 * ratio) + 'vh' 
+        });
+        $('.rleg2').css({
+            'width': 5.8 * ratio + 'vh',
+            'margin-top': 24.25 * ratio + 'vh',
+            'margin-left': (6 * ratio) + 'vh'
+        });
+        $('.lleg2').css({
+            'width': 5.85 * ratio + 'vh',
+            'margin-top': 24.45 * ratio + 'vh',
+            'margin-left': (12.2 * ratio) + 'vh'
+        });
+      }
+      updateSkellySize(width/17);
+
+
+      var skelly = JSON.parse(data.onDamage);
+
+      var headImages = document.getElementsByClassName('head2');
+      if (skelly.BodyPartDamage.DamageType["Head"] === 1) {
+        headImages[0].setAttribute('src', 'img/head_l.png');
+      } else if (skelly.BodyPartDamage.DamageType["Head"] === 2) {
+        headImages[0].setAttribute('src', 'img/head_m.png');
+      } else if (skelly.BodyPartDamage.DamageType["Head"] === 3) {
+        headImages[0].setAttribute('src', 'img/head_h.png');
+      } else if (skelly.BodyPartDamage.NeedSewed["Head"] == true) {
+        headImages[0].setAttribute('src', 'img/head_s.png');
+      }else if (skelly.BodyPartDamage.Fractures["Head"] == true){
+        headImages[0].setAttribute('src', 'img/head_f.png');
+      }else if (skelly.BodyPartDamage.Fractures["Head"] == 'cast' || skelly.BodyPartDamage.Fractures["Head"] == 'splint'){
+        headImages[0].setAttribute('src', 'img/head_b.png');
+      }
+
+
+      var torsoImages = document.getElementsByClassName('rarm2');
+      if (skelly.BodyPartDamage.DamageType["Rarm"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_l.png');
+      } else if (skelly.BodyPartDamage.DamageType["Rarm"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_m.png');
+      } else if (skelly.BodyPartDamage.DamageType["Rarm"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_h.png');
+      } else if (skelly.BodyPartDamage.NeedSewed["Rarm"] == true) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_s.png');
+      } else if (skelly.BodyPartDamage.Fractures["Rarm"] == true){
+        torsoImages[0].setAttribute('src', 'img/arm_right_f.png');
+      }else if (skelly.BodyPartDamage.Fractures["Rarm"] == 'cast' || skelly.BodyPartDamage.Fractures["Rarm"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/arm_right_b.png');
+      }
+
+
+      var torsoImages = document.getElementsByClassName('rleg2');
+      if (skelly.BodyPartDamage.DamageType["Rleg"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_l.png');
+      } else if (skelly.BodyPartDamage.DamageType["Rleg"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_m.png');
+      } else if (skelly.BodyPartDamage.DamageType["Rleg"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_h.png');
+      } else if (skelly.BodyPartDamage.NeedSewed["Rleg"] == true) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_s.png');
+      }else if (skelly.BodyPartDamage.Fractures["Rleg"] == true){
+        torsoImages[0].setAttribute('src', 'img/leg_right_f.png');
+      }else if (skelly.BodyPartDamage.Fractures["Rleg"] == 'cast' || skelly.BodyPartDamage.Fractures["Rleg"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/leg_right_b.png');
+      }
+
+      var torsoImages = document.getElementsByClassName('larm2');
+      if (skelly.BodyPartDamage.DamageType["Larm"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_l.png');
+      } else if (skelly.BodyPartDamage.DamageType["Larm"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_m.png');
+      } else if (skelly.BodyPartDamage.DamageType["Larm"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_h.png');
+      } else if (skelly.BodyPartDamage.NeedSewed["Larm"] == true) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_s.png');
+      }else if (skelly.BodyPartDamage.Fractures["Larm"] == true){
+        torsoImages[0].setAttribute('src', 'img/arm_left_f.png');
+      }else if (skelly.BodyPartDamage.Fractures["Larm"] == 'cast' || skelly.BodyPartDamage.Fractures["Larm"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/arm_left_b.png');
+      }
+
+      var torsoImages = document.getElementsByClassName('lleg2');
+      if (skelly.BodyPartDamage.DamageType["Lleg"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_l.png');
+      } else if (skelly.BodyPartDamage.DamageType["Lleg"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_m.png');
+      } else if (skelly.BodyPartDamage.DamageType["Lleg"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_h.png');
+      } else if (skelly.BodyPartDamage.NeedSewed["Lleg"] == true) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_s.png');
+      }else if (skelly.BodyPartDamage.Fractures["Lleg"] == true){
+        torsoImages[0].setAttribute('src', 'img/leg_left_f.png');
+      }else if (skelly.BodyPartDamage.Fractures["Lleg"] == 'cast' || skelly.BodyPartDamage.Fractures["Lleg"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/leg_left_b.png');
+      }
+
+      var torsoImages = document.getElementsByClassName('torso2');
+      if (skelly.BodyPartDamage.DamageType["Torso"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/torso_l.png');
+      } else if (skelly.BodyPartDamage.DamageType["Torso"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/torso_m.png');
+      } else if (skelly.BodyPartDamage.DamageType["Torso"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/torso_h.png');
+      } else if (skelly.BodyPartDamage.NeedSewed["Torso"] == true) {
+        torsoImages[0].setAttribute('src', 'img/torso_s.png');
+      }else if (skelly.BodyPartDamage.Fractures["Torso"] == true){
+        torsoImages[0].setAttribute('src', 'img/torso_f.png');
+      }else if (skelly.BodyPartDamage.Fractures["Torso"] == 'cast' || skelly.BodyPartDamage.Fractures["Torso"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/torso_b.png');
+      }
+
+      if (data.openSkelly != undefined){
+        if (data.openSkelly) {
+          skellyIsOpen = true
+          var screen = document.getElementsByClassName("ondmgSkelly");
+          screen[0].style.display = "block";
+        } else {
+          skellyIsOpen = false
+          $('.ondmgSkelly').remove();
+        }
+      } else {
+        if (skellyIsOpen) {
+          return
+        }
+        $('.ondmgSkelly').fadeIn(2500);
+        setTimeout(function() {
+          $('.ondmgSkelly').fadeOut(2500);
+          setTimeout(function() {
+            $('.ondmgSkelly').remove();
+          }, 2500);
+        }, 4000);
+      }
+    }
+
+    if (data.damageStatus) {
+      DamageList = data.damageStatus;
+      DamageList = JSON.parse(DamageList);
+
+      if (DamageList.ServerId == null){
+        console.log('unable to get player statebag, make sure you are running onesync infinity with updated artifacts!')
+      }
+
+      currentPlayerId = DamageList.ServerId;
+
+      if (DamageList == null) {
+        console.log('DamageList returned null, retrying...')
+        $.post('https://osp_ambulance/LoadPlayer', JSON.stringify({
+          PlayerId: currentPlayerId
+        }));
+        return;
+      }
+
+      if (DamageList.skellyWidth != undefined) {
+        skellyWidth = DamageList.skellyWidth
+        skellyPos = DamageList.skellyPos
+      }
+
+      skellyIsOpen = false
+      $('.skellybox').remove();
+      $('.ondmgSkelly').remove();
+
+      
+      if (DamageList.MessageLog) {
+        DamageList.MessageLog = DamageList.MessageLog.reverse(); 
+      }
+      ClearDamageContents();
+      LoadDamageContent();
+
+
+      var neck = document.getElementsByClassName('neck');
+      var spine = document.getElementsByClassName('spine');
+      var rleg = document.getElementsByClassName('rlegfracture');
+      var lleg = document.getElementsByClassName('llegfracture');
+      var rarm = document.getElementsByClassName('rarmfracture');
+      var larm = document.getElementsByClassName('larmfracture');
+
+      if (DamageList.BodyPartDamage.Fractures["Head"] == 'xrayed') {
+        neck[0].setAttribute('src', 'img/head_fracture.png');
+      } 
+      if (DamageList.BodyPartDamage.Fractures["Torso"] == 'xrayed'){
+        spine[0].setAttribute('src', 'img/torso_fracture.png');
+      } 
+      if (DamageList.BodyPartDamage.Fractures["Rarm"] == 'xrayed'){
+        rarm[0].setAttribute('src', 'img/arm_right_fracture.png');
+      } 
+      if (DamageList.BodyPartDamage.Fractures["Larm"] == 'xrayed'){
+        larm[0].setAttribute('src', 'img/arm_left_fracture.png');
+      } 
+      if (DamageList.BodyPartDamage.Fractures["Rleg"] == 'xrayed'){
+        rleg[0].setAttribute('src', 'img/leg_right_fracture.png');
+      } 
+      if (DamageList.BodyPartDamage.Fractures["Lleg"] == 'xrayed'){
+        lleg[0].setAttribute('src', 'img/leg_left_fracture.png');
+      }
+
+
+      var headImages = document.getElementsByClassName('head');
+      if (DamageList.BodyPartDamage.DamageType["Head"] === 1) {
+        headImages[0].setAttribute('src', 'img/head_l.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Head"] === 2) {
+        headImages[0].setAttribute('src', 'img/head_m.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Head"] === 3) {
+        headImages[0].setAttribute('src', 'img/head_h.png');
+      } else if (DamageList.BodyPartDamage.NeedSewed["Head"] == true) {
+        headImages[0].setAttribute('src', 'img/head_s.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Head"] == true){
+        headImages[0].setAttribute('src', 'img/head_f.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Head"] == 'cast' || DamageList.BodyPartDamage.Fractures["Head"] == 'splint'){
+        headImages[0].setAttribute('src', 'img/head_b.png');
+      }
+
+
+      var torsoImages = document.getElementsByClassName('rarm');
+      if (DamageList.BodyPartDamage.DamageType["Rarm"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_l.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Rarm"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_m.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Rarm"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_h.png');
+      } else if (DamageList.BodyPartDamage.NeedSewed["Rarm"] == true) {
+        torsoImages[0].setAttribute('src', 'img/arm_right_s.png');
+      } else if (DamageList.BodyPartDamage.Fractures["Rarm"] == true){
+        torsoImages[0].setAttribute('src', 'img/arm_right_f.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Rarm"] == 'cast' || DamageList.BodyPartDamage.Fractures["Rarm"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/arm_right_b.png');
+      }
+
+
+      var torsoImages = document.getElementsByClassName('rleg');
+      if (DamageList.BodyPartDamage.DamageType["Rleg"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_l.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Rleg"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_m.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Rleg"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_h.png');
+      } else if (DamageList.BodyPartDamage.NeedSewed["Rleg"] == true) {
+        torsoImages[0].setAttribute('src', 'img/leg_right_s.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Rleg"] == true){
+        torsoImages[0].setAttribute('src', 'img/leg_right_f.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Rleg"] == 'cast' || DamageList.BodyPartDamage.Fractures["Rleg"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/leg_right_b.png');
+      }
+
+      var torsoImages = document.getElementsByClassName('larm');
+      if (DamageList.BodyPartDamage.DamageType["Larm"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_l.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Larm"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_m.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Larm"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_h.png');
+      } else if (DamageList.BodyPartDamage.NeedSewed["Larm"] == true) {
+        torsoImages[0].setAttribute('src', 'img/arm_left_s.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Larm"] == true){
+        torsoImages[0].setAttribute('src', 'img/arm_left_f.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Larm"] == 'cast' || DamageList.BodyPartDamage.Fractures["Larm"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/arm_left_b.png');
+      }
+
+      var torsoImages = document.getElementsByClassName('lleg');
+      if (DamageList.BodyPartDamage.DamageType["Lleg"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_l.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Lleg"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_m.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Lleg"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_h.png');
+      } else if (DamageList.BodyPartDamage.NeedSewed["Lleg"] == true) {
+        torsoImages[0].setAttribute('src', 'img/leg_left_s.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Lleg"] == true){
+        torsoImages[0].setAttribute('src', 'img/leg_left_f.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Lleg"] == 'cast' || DamageList.BodyPartDamage.Fractures["Lleg"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/leg_left_b.png');
+      }
+
+      var torsoImages = document.getElementsByClassName('torso');
+      if (DamageList.BodyPartDamage.DamageType["Torso"] === 1) {
+        torsoImages[0].setAttribute('src', 'img/torso_l.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Torso"] === 2) {
+        torsoImages[0].setAttribute('src', 'img/torso_m.png');
+      } else if (DamageList.BodyPartDamage.DamageType["Torso"] === 3) {
+        torsoImages[0].setAttribute('src', 'img/torso_h.png');
+      } else if (DamageList.BodyPartDamage.NeedSewed["Torso"] == true) {
+        torsoImages[0].setAttribute('src', 'img/torso_s.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Torso"] == true){
+        torsoImages[0].setAttribute('src', 'img/torso_f.png');
+      }else if (DamageList.BodyPartDamage.Fractures["Torso"] == 'cast' || DamageList.BodyPartDamage.Fractures["Torso"] == 'splint'){
+        torsoImages[0].setAttribute('src', 'img/torso_b.png');
+      }
+
+
+      var pain = document.getElementsByClassName('paintext');
+      if (DamageList.Pain > 0.5 && DamageList.Pain < 5) {
+        pain[0].innerHTML = lang.update1.low_pain;
+      } else if (DamageList.Pain > 5 && DamageList.Pain < 10) {
+        pain[0].innerHTML = lang.update1.medium_pain;
+      } else if (DamageList.Pain > 10) {
+        pain[0].innerHTML = lang.update1.extreme_pain;
+      } else {
+        pain[0].innerHTML = lang.update1.no_bloodloss;
+      }
+
+      var pain = document.getElementsByClassName('bloodtext');
+      if (DamageList.BodyPartDamage.BloodLevel > 5.2 && DamageList.BodyPartDamage.BloodLevel < 5.99) {
+        pain[0].innerHTML = lang.ui.minor_bloodloss
+      } else if (DamageList.BodyPartDamage.BloodLevel > 4.5 && DamageList.BodyPartDamage.BloodLevel < 5.2) {
+        pain[0].innerHTML = lang.ui.moderate_bloodloss
+      } else if (DamageList.BodyPartDamage.BloodLevel < 4.5) {
+        pain[0].innerHTML = lang.ui.severe_bloodloss
+      } else {
+        pain[0].innerHTML = lang.update1.no_bloodloss;
+      }
+
+      var refillsaline = document.getElementsByClassName('refillsalinetext');
+      if (DamageList.BodyPartDamage.TotalInfusionFill > 0) {
+        refillsaline[0].style.color = 'rgb(249, 164, 4)';
+      } else {
+        refillsaline[0].innerHTML = null;
+      }
+
+      var refillblood = document.getElementsByClassName('refillbloodtext');
+      if (DamageList.BodyPartDamage.TotalBloodFill > 0) {
+        refillblood[0].style.color = 'rgb(255, 0, 0)';
+        refillblood[0].style.textShadow = "0 0 0.5vh rgb(255, 0, 0)";
+      } else {
+        refillblood[0].style.color = 'rgb(219, 219, 219)';
+        refillblood[0].style.textShadow = "0 0 0.5vh rgb(219, 219, 219)";
+      }
+
+      refillblood[0].innerHTML = Math.round(DamageList.BodyPartDamage.RefillBloodLeft) +"/"+ DamageList.BodyPartDamage.TotalBloodFill +"ml";
+
+      if (DamageList.BodyPartDamage.TotalInfusionFill >= 1000) {
+        refillsaline[0].innerHTML = (Math.round(DamageList.BodyPartDamage.RefillInfusionLeft/10)/100) +"/"+ (DamageList.BodyPartDamage.TotalInfusionFill / 1000) +"L" + ' ' + ' ';
+      } else if (DamageList.BodyPartDamage.TotalInfusionFill > 0){
+        refillsaline[0].innerHTML = Math.round(DamageList.BodyPartDamage.RefillInfusionLeft) +"/"+ DamageList.BodyPartDamage.TotalInfusionFill +"ml" + ' ' + ' ';
+      } 
+
+      if (DamageList.BodyPartDamage.TotalBloodFill >= 1000) {
+        refillblood[0].innerHTML = (Math.round(DamageList.BodyPartDamage.RefillBloodLeft/10)/100) +"/"+ (DamageList.BodyPartDamage.TotalBloodFill / 1000) +"L";
+      } else {
+        refillblood[0].innerHTML = Math.round(DamageList.BodyPartDamage.RefillBloodLeft) +"/"+ DamageList.BodyPartDamage.TotalBloodFill +"ml";
+      }
+
+
+      var playerName = document.getElementsByClassName('playername');
+      playerName[0].innerHTML = DamageList.playerName;
+
+
+
+
+      var rArmImages = document.getElementsByClassName('rarmtor');
+      if (DamageList.BodyPartDamage.appliedTourniquets["Rarm"]) {
+        rArmImages[0].setAttribute('src', 'img/arm_right_t.png');
+      } 
+
+
+      var lArmImages = document.getElementsByClassName('larmtor');
+      if (DamageList.BodyPartDamage.appliedTourniquets["Larm"]) {
+        lArmImages[0].setAttribute('src', 'img/arm_left_t.png');
+      } 
+
+      var rLegImages = document.getElementsByClassName('rlegtor');
+      if (DamageList.BodyPartDamage.appliedTourniquets["Rleg"]) {
+        rLegImages[0].setAttribute('src', 'img/leg_right_t.png');
+      } 
+
+      var lLegImages = document.getElementsByClassName('llegtor');
+      if (DamageList.BodyPartDamage.appliedTourniquets["Lleg"]) {
+        lLegImages[0].setAttribute('src', 'img/leg_left_t.png');
+      } 
+
+      if (DamageList.BodyPartDamage.Triage !== "None") {
+        var div = document.getElementsByClassName('triageText')[0]; 
+        var colorDiv = document.getElementsByClassName('triagebox')[0]; 
+        
+        if (DamageList.BodyPartDamage.Triage == "Minor"){
+          div.textContent = lang.triage.minor;
+          colorDiv.style.backgroundColor = 'rgba(0, 128, 0, 0.9)';
+          colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, var(--third-color), rgba(83, 83, 83, 0.1))";
+          div.style.color = "rgba(52, 234, 197, 0.99)";
+          div.style.textShadow = "0 0 1vh rgba(52, 234, 197, 0.99)";
+        }else if (DamageList.BodyPartDamage.Triage == "Delayed"){
+          div.textContent = lang.triage.delayed;
+          colorDiv.style.backgroundColor = 'rgba(255, 255, 0, 0.7)';
+          colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(255, 255, 0, 0.3), rgba(83, 83, 83, 0.1))";
+          div.style.color = "rgba(255, 255, 0, 0.99)";
+          div.style.textShadow = "0 0 1vh rgba(255, 255, 0, 0.99)";
+        }else if (DamageList.BodyPartDamage.Triage == "Immediate"){
+          div.textContent = lang.triage.immediate;
+          colorDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+          colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(255, 0, 0, 0.3), rgba(83, 83, 83, 0.1))";
+          div.style.color = "rgba(255, 0, 0, 0.99)";
+          div.style.textShadow = "0 0 1vh rgba(255, 0, 0, 0.99)";
+        }else if (DamageList.BodyPartDamage.Triage == "Expectant"){
+          div.textContent = lang.triage.expectant;
+          colorDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+          colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(0, 0, 0, 0.3), rgba(83, 83, 83, 0.1))";
+          div.style.color = "rgba(0, 0, 0, 0.99)";
+          div.style.textShadow = "0 0 1vh rgba(0, 0, 0, 0.99)";
+        }
+      }else{
+        var div = document.getElementsByClassName('triagebox')[0];
+        div.style.backgroundColor = "rgba(167, 172, 186, 0.9);";
+        div.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05))";
+        div.style.textShadow = "0 0 1vh white";
+
+
+        var div = document.getElementsByClassName('triageText')[0];
+        div.textContent = lang.triage.none;
+        div.style.color = "white";
+
+      }
+      LoadMessagelog();
+    }
+
+    if (data.display === true) {
+      ClearMenu();
+      $('.wrapper').show();
+      $('.patientlog').show();
+      $('.actionbox').show();
+      $('.wrapper').addClass('bounce-in-small');
+      var element = document.getElementById('patientlog');
+      if (lastLogOpen == true) {
+        lastLogOpen = true;
+        element.classList.add('transpatientlog');
+      } else {
+        element.classList.remove('transpatientlog');
+      }
+      var element = document.getElementById('actionbox');
+      if (lastActionOpen == true) {
+        lastActionOpen = true;
+        element.classList.add('transactionbox');
+      } else {
+        element.classList.remove('transactionbox');
+      }
+      $('.actionbox').addClass('bounce-in-small');
+      $('.patientlog').addClass('bounce-in-small');
+      ClearDamageContents();
+      LoadDamageContent();
+      var playerName = document.getElementsByClassName('playername');
+      playerName[0].innerHTML = DamageList.playerName;
+      if (activeNavbar === "Medical"){
+        StartupPage();
+      }else if (activeNavbar === "Triage"){
+        Triage();
+      } else if (activeNavbar === "Medicine") {
+        Medicine();
+      } else if (activeNavbar === "Interventions") {
+        Interventions();
+      } else if (activeNavbar === "Transport") {
+        Transport();
+      }
+    } else if (data.display === false) {
+      CloseUI()
+    }
+  });
+
+
+  $(document).keyup(function (e) {
+    if (e.key === 'Escape' || e.key == 'Enter') {
+      CloseUI()
+      if (editSkellyIsOpen){
+        $('.skellybox').remove();
+        $.post('https://osp_ambulance/RecieveSkellyData', JSON.stringify({skellyWidth: skellyWidth, skellyPos: skellyPos}));
+      }
+    }
+  });
+
+  $(document).ready(function() {
+    var numItems = $('li.fancyTab').length;
+
+    if (numItems == 12){
+      $("li.fancyTab").width('8.3%');
+    }
+    if (numItems == 11){
+      $("li.fancyTab").width('9%');
+    }
+    if (numItems == 10){
+      $("li.fancyTab").width('10%');
+    }
+    if (numItems == 9){
+      $("li.fancyTab").width('11.1%');
+    }
+    if (numItems == 8){
+      $("li.fancyTab").width('12.5%');
+    }
+    if (numItems == 7){
+      $("li.fancyTab").width('14.2%');
+    }
+    if (numItems == 6){
+      $("li.fancyTab").width('16.666666666666667%');
+    }
+    if (numItems == 5){
+      $("li.fancyTab").width('20%');
+    }
+    if (numItems == 4){
+      $("li.fancyTab").width('25%');
+    }
+    if (numItems == 3){
+      $("li.fancyTab").width('33.3%');
+    }
+    if (numItems == 2){
+      $("li.fancyTab").width('50%');
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+
+    var tabs = document.getElementsByClassName("fancyTab");
+
+    var tabContents = document.getElementsByClassName("tab-pane");
+
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener("click", function(event) {
+        event.preventDefault();
+
+        for (var j = 0; j < tabs.length; j++) {
+            tabs[j].classList.remove("active");
+        }
+
+        for (var k = 0; k < tabContents.length; k++) {
+            tabContents[k].classList.remove("in", "active");
+        }
+
+        this.classList.add("active");
+
+        var tabContentId = this.getElementsByTagName("a")[0].getAttribute("href").slice(1);
+
+        document.getElementById(tabContentId).classList.add("in", "active");
+      });
+    }
+  });
+
+  function ClearContents() {
+    $(".pane").empty();
+    $("#tabBody0").empty();
+    $("#tabBody1").empty();
+    $("#tabBody2").empty();
+    $("#tabBody3").empty();
+    $("#tabBody4").empty();
+    $("#tabBody5").empty();
+    $(".patientlogcontent").empty();
+    $(".groupwrapper").remove();
+    $(".woundtext").empty();
+  }
+
+  function ClearMenu() {
+    $(".pane").empty();
+    $("#tabBody0").empty();
+    $("#tabBody1").empty();
+    $("#tabBody2").empty();
+    $("#tabBody3").empty();
+    $("#tabBody4").empty();
+    $("#tabBody5").empty();
+  }
+
+  function LoadMessagelog() {
+    $(".patientlogcontent").empty();
+    var messageLog = DamageList.MessageLog; 
+    for (var i = 0; i < messageLog.length; i++) {
+      var message = messageLog[i];
+      var input = '<div class="patientlogtext">' + message + '</div>';
+      $('.patientlogcontent').append(input);
+    }
+  }
+
+
+  function CloseUI() {
+    $.post('https://osp_ambulance/focusOff', JSON.stringify({}));
+    $('.wrapper').fadeOut();
+    $('.patientlog').fadeOut();
+    var element = document.getElementById('patientlog');
+    element.classList.remove('transpatientlog');
+    $('.actionbox').fadeOut();
+    var element = document.getElementById('actionbox');
+    element.classList.remove('transactionbox');
+    setTimeout(function() {
+      ClearContents();
+      var headImages = document.getElementsByClassName('head');
+      headImages[0].setAttribute('src', 'img/head.png');
+
+      var torsoImages = document.getElementsByClassName('torso');
+      torsoImages[0].setAttribute('src', 'img/torso.png');
+
+      var rarmImages = document.getElementsByClassName('rarm');
+      rarmImages[0].setAttribute('src', 'img/arm_right.png');
+
+      var rlegImages = document.getElementsByClassName('rleg');
+      rlegImages[0].setAttribute('src', 'img/leg_right.png');
+
+      var larmImages = document.getElementsByClassName('larm');
+      larmImages[0].setAttribute('src', 'img/arm_left.png');
+
+      var llegImages = document.getElementsByClassName('lleg');
+      llegImages[0].setAttribute('src', 'img/leg_left.png');
+      $('.wrapper').hide();
+
+      var larmtor = document.getElementsByClassName('larmtor');
+      larmtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+      var rarmtor = document.getElementsByClassName('rarmtor');
+      rarmtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+      var llegtor = document.getElementsByClassName('llegtor');
+      llegtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+      var rlegtor = document.getElementsByClassName('rlegtor');
+      rlegtor[0].setAttribute('src', '');
+      $("#tourniquet").remove();
+
+      var neck = document.getElementsByClassName('neck');
+      var spine = document.getElementsByClassName('spine');
+      var rleg = document.getElementsByClassName('rlegfracture');
+      var lleg = document.getElementsByClassName('llegfracture');
+      var rarm = document.getElementsByClassName('rarmfracture');
+      var larm = document.getElementsByClassName('larmfracture');
+      neck[0].setAttribute('src', '');
+      spine[0].setAttribute('src', '');
+      rarm[0].setAttribute('src', '');
+      larm[0].setAttribute('src', '');
+      rleg[0].setAttribute('src', '');
+      lleg[0].setAttribute('src', '');
+
+
+
+
+    }, 200);
+  }
+
+
+
+  function LoadDamageContent() {
+    LoadBodypartDamageContent('Head');
+    LoadBodypartDamageContent('Torso');
+    LoadBodypartDamageContent('Lleg');
+    LoadBodypartDamageContent('Larm');
+    LoadBodypartDamageContent('Rleg');
+    LoadBodypartDamageContent('Rarm');
+  }
+
+  function LoadBodypartDamageContent(bodypart) {
+    var input = '<div class="upperassescontent">';
+    if (DamageList.BodyPartDamage.Bleeding[bodypart] > 0.5) {
+      input += '<p class="dmgassesinnercontent" style="color:rgba(255, 0, 0, 0.9); text-shadow: 0 0 0.5vh rgba(255, 0, 0, 0.9);">'+lang.ui.severe_hemmorage+'</p>';
+    } else {
+      if (DamageList.BodyPartDamage.Bleeding[bodypart]){
+        input += '<p class="dmgassesinnercontent" style="color:rgba(255, 0, 0, 0.9); text-shadow: 0 0 0.5vh rgba(255, 0, 0, 0.9);">'+lang.ui.active_bleeding+'</p>';
+      }
+    }
+    if (DamageList.BodyPartDamage.NeedSewed[bodypart] == true) {
+      input += '<p class="dmgassesinnercontent" style="color:rgba(43, 90, 246, 0.9); text-shadow: 0 0 0.5vh rgba(43, 90, 246, 0.9);">'+lang.ui.need_sewing+'</p>';
+    }
+    if (DamageList.BodyPartDamage.Fractures[bodypart] == true) {
+      input += '<p class="dmgassesinnercontent" style="color:rgba(255, 209, 112, 0.9); text-shadow: 0 0 0.5vh rgba(255, 209, 112, 0.9);">'+lang.ui.need_xray+'</p>';
+    } else if (DamageList.BodyPartDamage.Fractures[bodypart] == 'xrayed') {
+      input += '<p class="dmgassesinnercontent" style="color:rgba(255, 0, 0, 0.9); text-shadow: 0 0 0.5vh rgba(255, 0, 0, 0.9);">'+lang.ui.fractured+'</p>';
+    }
+    if (DamageList.BodyPartDamage.Fractures[bodypart] == 'splint') {
+      input += '<p class="dmgassesinnercontent" id="tourniquet" style="color:rgba(181, 163, 74, 1.0); text-shadow: 0 0 0.5vh rgba(181, 163, 74, 1.0);">'+lang.ui.splint_applied+'</p>';
+    } else if (DamageList.BodyPartDamage.Fractures[bodypart] == 'cast'){
+      input += '<p class="dmgassesinnercontent" id="tourniquet" style="color:rgba(181, 163, 74, 1.0); text-shadow: 0 0 0.5vh rgba(181, 163, 74, 1.0);">'+lang.ui.cast_applied+'</p>';
+    }
+
+
+
+    if (bodypart == 'Rarm' || bodypart == 'Larm' || bodypart == 'Rleg' || bodypart == 'Lleg') {
+      if (DamageList.BodyPartDamage.appliedTourniquets[bodypart] == true) {
+        input += '<p class="dmgassesinnercontent" id="tourniquet" style="color:rgba(43, 90, 246, 0.9); text-shadow: 0 0 0.5vh rgba(43, 90, 246, 0.9);">'+lang.ui.tourniquet_applied+'</p>';
+      }
+    }
+    input += '</div>';
+    $(".wound"+bodypart).append(input);
+    if (DamageList.BodyPartDamage.Wounds[bodypart].length > 0) {
+      var input = '';
+      if (DamageList.BodyPartDamage.Bleeding[bodypart]){
+        input += '<div class="woundtextborder"></div>';
+      }
+      input += '<div class="innerwounds">';
+      var woundCounts = new Map();
+      for (var wound of DamageList.BodyPartDamage.Wounds[bodypart]) {
+        if (wound != null){
+          if (!woundCounts.has(wound)) {
+            woundCounts.set(wound, 1);
+          } else {
+            var count = woundCounts.get(wound);
+            woundCounts.set(wound, count + 1);
+          }
+        }
+      }
+      woundCounts.forEach(function(count, wound) {
+        var severity;
+
+        if (count === 1) {
+          severity = lang.wounds.minor;
+        } else if (count === 2) {
+          severity = lang.wounds.medium;
+        } else if (count > 2) {
+          severity = lang.wounds.major;
+        }
+        input += '<p class="dmgassesinnercontent">' + severity + " " + woundTranslations[wound] + '</p>';
+      });
+      input += '</div>';
+      $(".wound"+bodypart).append(input);
+    }else{
+      var input ='<div class="innerwounds">'+
+      '<p class="dmgassesinnercontent">'+lang.ui.no_active_injuries+'</p>'+
+      '</div>';
+
+      $(".wound"+bodypart).append(input);
+    }
+  }
+
+  function Medical(playanim) {
+    activeNavbar = "Medical";
+    BodyCheckInit = true;
+    ClearMenu();
+
+    var input = '<h4 class="menuTitle">'+lang.buttons.medical_equipment+'</h4>';
+    Object.keys(medicationData).forEach(key => {
+      if (medicationData[key].type == 'tourniquet') {
+        if (activeBodyPart != "Head" && activeBodyPart != "Torso") {
+          if (DamageList.BodyPartDamage.appliedTourniquets[activeBodyPart]){
+            input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\', '+false+')">'+medicationData[key].buttonLangRemove+'</button>';
+          } else {
+            if (findItem(medicationData[key].itemName)) {
+              input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\', '+true+')">'+medicationData[key].buttonLang+'</button>';
+            } else{
+              input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+            }
+          }
+        } else {
+          input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+        }
+      } else if (medicationData[key].type == 'bandage') {
+        if (findItem(medicationData[key].itemName) && DamageList.BodyPartDamage.DamageType[activeBodyPart]) {
+          input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\')">'+medicationData[key].buttonLang+'</button>';
+        } else{
+          input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+        }
+      } else if (medicationData[key].type == 'sewing'){
+        if (findItem(medicationData[key].itemName) && DamageList.BodyPartDamage.NeedSewed[activeBodyPart]) {
+          input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\')">'+medicationData[key].buttonLang+'</button>';
+        } else{
+          input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+        }
+      }
+    });
+    $("#tabBody1").append(input);
+  }
+
+  function Medicine(playanim) {
+    activeNavbar = "Medicine";
+    BodyCheckInit = true;
+    ClearMenu();
+
+    var input = '<h4 class="menuTitle">'+lang.buttons.fluids+'</h4>';
+    Object.keys(medicationData).forEach(key => {
+      if (medicationData[key].type == 'medication' || medicationData[key].type == 'infusion' || medicationData[key].type == 'custom') {
+        if (findItem(medicationData[key].itemName)) {
+          input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\')">'+medicationData[key].buttonLang+'</button>';
+        } else{
+          input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+        }
+      }
+    });
+    $("#tabBody2").append(input);
+  }
+
+  function findBone(index, bodypart) {
+    for (var i = 0; i < castsData[index].casts.length; i++) {
+      if (castsData[index].casts[i].bone == bodypart){
+        return i;
+      }
+    }
+    return false;
+  }
+
+  function Interventions() {
+    activeNavbar = "Interventions";
+    BodyCheckInit = true;
+    ClearMenu();
+    var numDivs = 3; 
+    var interval = 100; 
+
+    var input = '<h4 class="menuTitle">'+lang.buttons.interventions+'</h4>'+
+    '<button class="interactionbutton" onclick="CPR()">'+lang.buttons.cpr+'</button>';
+
+    if (findItem('bodybag')) {
+      input += '<button class="interactionbutton" onclick="Bodybag()">'+lang.buttons.bodybag+'</button>';
+    } else{
+      input += '<button class="interactionbutton button-disabled" onclick="Bodybag()">'+lang.buttons.bodybag+'</button>';
+    }
+    
+    if (findItem('revivekit')) {
+      input += '<button class="interactionbutton" onclick="ReviveKit()">'+lang.buttons.revivekit+'</button>';
+    } else{
+      input += '<button class="interactionbutton button-disabled" onclick="ReviveKit()">'+lang.buttons.revivekit+'</button>';
+    }
+
+    if (findItem('patientclothing')) {
+      input += '<button class="interactionbutton" onclick="addPatientClothing()">Patienten Outfit anlegen</button>';
+    }
+
+    Object.keys(castsData).forEach(key => {
+      if (castsData[key].type == 'splint') {
+        var bone = findBone(key, activeBodyPart)
+        if (bone !== false) {
+          if (DamageList.BodyPartDamage.Fractures[activeBodyPart] != 'splint' && DamageList.BodyPartDamage.Fractures[activeBodyPart] != 'cast' && DamageList.BodyPartDamage.Fractures[activeBodyPart] != 'xrayed' && DamageList.BodyPartDamage.Fractures[activeBodyPart] != false){
+            if (findItem(castsData[key].casts[bone].itemName)) {
+              input += '<button class="interactionbutton" onclick="FractureButton(\''+castsData[key].casts[bone].itemName+'\')">'+castsData[key].buttonLang+'</button>';
+            } else{
+              input += '<button class="interactionbutton button-disabled">'+castsData[key].buttonLang+'</button>';
+            }
+          } else {
+            if (DamageList.BodyPartDamage.Fractures[activeBodyPart] == 'splint'){
+              input += '<button class="interactionbutton" onclick="FractureButton(\''+castsData[key].casts[bone].itemName+'\')">'+castsData[key].removeButtonLang+'</button>';
+            } else {
+              input += '<button class="interactionbutton button-disabled">'+castsData[key].buttonLang+'</button>';
+            }
+          }
+        } else {
+          input += '<button class="interactionbutton button-disabled">'+castsData[key].buttonLang+'</button>';
+        }
+
+      } else if (castsData[key].type == 'cast') {
+
+        var bone = findBone(key, activeBodyPart)
+        if (bone !== false){
+          if (DamageList.BodyPartDamage.Fractures[activeBodyPart] != 'splint' && DamageList.BodyPartDamage.Fractures[activeBodyPart] != 'cast' && DamageList.BodyPartDamage.Fractures[activeBodyPart] != true && DamageList.BodyPartDamage.Fractures[activeBodyPart] != false){
+            if (findItem(castsData[key].casts[bone].itemName)) {
+              input += '<button class="interactionbutton" onclick="FractureButton(\''+castsData[key].casts[bone].itemName+'\')">'+castsData[key].buttonLang+'</button>';
+            } else{
+              input += '<button class="interactionbutton button-disabled">'+castsData[key].buttonLang+'</button>';
+            }
+          } else {
+            input += '<button class="interactionbutton button-disabled">'+castsData[key].buttonLang+'</button>';
+          }
+        } else {
+          input += '<button class="interactionbutton button-disabled">'+castsData[key].buttonLang+'</button>';
+        }
+
+
+      }
+    });
+
+
+
+    $("#tabBody3").append(input);
+  }
+
+  function Triage() {
+    activeNavbar = "Triage";
+    BodyCheckInit = true;
+    ClearMenu();
+    var numDivs = 5; 
+    var interval = 100; 
+
+    var input = '<h4 class="menuTitle">'+lang.triage.triage+'</h4>'+
+    '<button class="interactionbutton" style="color:white; text-shadow: 0 0 0.5vh white; background: radial-gradient(83% 83% at 50% 50%, var(--primary-color), rgba(23, 23, 23, 0.552)) !important;" onclick="TriageExec(\'None\', \'rgba(30, 30, 51, 0.774)\', \'None\')">'+lang.triage.none+'</button>'+
+    '<button class="interactionbutton" style="background-color:rgba(0, 128, 0, 0.9); color:rgba(30, 184, 30, 1.0); text-shadow: 0 0 0.5vh rgba(30, 184, 30, 1.0); background: radial-gradient(83% 83% at 50% 50%, rgba(0, 128, 0, 0.7), rgba(83, 83, 83, 0.05)) !important;" onclick="TriageExec(\'Minor\', \'rgba(0, 128, 0, 0.9)\', \'Minor\')">'+lang.triage.minor+'</button>'+
+    '<button class="interactionbutton" style="background-color:rgba(235, 235, 14, 0.7); color:rgba(255, 255, 0, 1.0); text-shadow: 0 0 0.5vh rgba(255, 255, 0, 1.0); background: radial-gradient(83% 83% at 50% 50%, rgba(255, 255, 0, 0.7), rgba(83, 83, 83, 0.05)) !important;" onclick="TriageExec(\'Delayed\', \'rgba(255, 255, 0, 0.7)\', \'Delayed\')">'+lang.triage.delayed+'</button>'+
+    '<button class="interactionbutton" style="background-color:rgba(226, 15, 15, 0.7); color:rgba(255, 46, 46, 1.0); text-shadow: 0 0 0.5vh rgba(255, 46, 46, 1.0); background: radial-gradient(83% 83% at 50% 50%, rgba(255, 0, 0, 0.7), rgba(83, 83, 83, 0.05)) !important;" onclick="TriageExec(\'Immediate\', \'rgba(255, 0, 0, 0.7)\', \'Immediate\')">'+lang.triage.immediate+'</button>'+
+    '<button class="interactionbutton" style="background-color:rgba(0, 0, 0, 0.9); color:rgba(255, 255, 255, 0.7); text-shadow: 0 0 0.5vh rgba(255, 255, 255, 0.5); background: radial-gradient(83% 83% at 50% 50%, rgba(0, 0, 0, 0.9), rgba(83, 83, 83, 0.03)) !important;" onclick="TriageExec(\'Expectant\', \'rgba(0, 0, 0, 0.7)\', \'Expectant\')">'+lang.triage.expectant+'</button>';
+
+    $("#tabBody4").append(input);
+  }
+
+  function TriageExec(text, color, type) {
+    var div = document.getElementsByClassName('triagebox')[0]; 
+    div.style.backgroundColor = color;
+
+    if (type == "Minor"){
+      DamageList.BodyPartDamage.Triage = "Minor";
+    }else if (type == "Delayed"){
+      DamageList.BodyPartDamage.Triage = "Delayed";
+    }else if (type == "Immediate"){
+      DamageList.BodyPartDamage.Triage = "Immediate";
+    }else if (type == "Expectant"){
+      DamageList.BodyPartDamage.Triage = "Expectant";
+    }else if (type == "None"){
+      DamageList.BodyPartDamage.Triage = "None";
+    }
+
+    var div = document.getElementsByClassName('triageText')[0]; 
+    var colorDiv = document.getElementsByClassName('triagebox')[0]; 
+
+    if (DamageList.BodyPartDamage.Triage == "Minor"){
+      div.textContent = lang.triage.minor;
+      colorDiv.style.backgroundColor = 'rgba(52, 234, 128, 0.9)';
+      colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(52, 234, 128, 0.3), rgba(83, 83, 83, 0.1))";
+      div.style.color = "rgba(52, 234, 128, 0.99)";
+      div.style.textShadow = "0 0 1vh rgba(52, 234, 128, 0.99)";
+    }else if (DamageList.BodyPartDamage.Triage == "Delayed"){
+      div.textContent = lang.triage.delayed;
+      colorDiv.style.backgroundColor = 'rgba(255, 255, 0, 0.7)';
+      colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(255, 255, 0, 0.3), rgba(83, 83, 83, 0.1))";
+      div.style.color = "rgba(255, 255, 0, 0.99)";
+      div.style.textShadow = "0 0 1vh rgba(255, 255, 0, 0.99)";
+    }else if (DamageList.BodyPartDamage.Triage == "Immediate"){
+      div.textContent = lang.triage.immediate;
+      colorDiv.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+      colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(255, 0, 0, 0.3), rgba(83, 83, 83, 0.1))";
+      div.style.color = "rgba(255, 0, 0, 0.99)";
+      div.style.textShadow = "0 0 1vh rgba(255, 0, 0, 0.99)";
+    }else if (DamageList.BodyPartDamage.Triage == "Expectant"){
+      div.textContent = lang.triage.expectant;
+      colorDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(0, 0, 0, 0.5), rgba(83, 83, 83, 0.1))";
+      div.style.color = "rgba(0, 0, 0, 0.99)";
+      div.style.textShadow = "0 0 1vh rgba(0, 0, 0, 0.5)";
+    } else {
+      div.textContent = lang.triage.none;
+      colorDiv.style.backgroundColor = "rgba(167, 172, 186, 0.9);";
+      colorDiv.style.background = "radial-gradient(83% 83% at 50% 50%, rgba(180, 180, 180, 0.158), rgba(120, 120, 120, .05))";
+      div.style.textShadow = "0 0 1vh white";
+      div.style.color = "white";
+    }
+
+    $.post('https://osp_ambulance/SaveData', JSON.stringify({data: DamageList, PlayerId: DamageList.ServerId}));
+
+  }
+
+
+  function Transport() {
+    activeNavbar = "Transport";
+    BodyCheckInit = true;
+    ClearMenu();
+    var numDivs = 3; 
+    var interval = 100; 
+
+    var input = '<h4 class="menuTitle">'+lang.buttons.transport+'</h4>'+
+    '<button class="interactionbutton" onclick="Carry()">'+lang.buttons.carry+'</button>'+
+    '<button class="interactionbutton" onclick="PutIn()">'+lang.buttons.putin+'</button>'+
+    '<button class="interactionbutton" onclick="GetOut()">'+lang.buttons.getout+'</button>';
+
+    $("#tabBody5").append(input);
+  }
+
+
+  function StartupPage() {
+    ClearMenu();
+    setTimeout(function() {
+
+      var input = '<h4 class="menuTitle" style="margin-top:2.52vh; margin-left:2.16vh">'+lang.buttons.medical_equipment+'</h4>';
+      Object.keys(medicationData).forEach(key => {
+        if (medicationData[key].type == 'tourniquet') {
+          if (activeBodyPart != "Head" && activeBodyPart != "Torso") {
+            if (DamageList.BodyPartDamage.appliedTourniquets[activeBodyPart]){
+              input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\', '+false+')">'+medicationData[key].buttonLangRemove+'</button>';
+            } else {
+              if (findItem(medicationData[key].itemName)) {
+                input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\', '+true+')">'+medicationData[key].buttonLang+'</button>';
+              } else{
+                input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+              }
+            }
+          } else {
+            input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+          }
+        } else if (medicationData[key].type == 'bandage') {
+          if (findItem(medicationData[key].itemName) && DamageList.BodyPartDamage.DamageType[activeBodyPart]) {
+            input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\')">'+medicationData[key].buttonLang+'</button>';
+          } else{
+            input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+          }
+        } else if (medicationData[key].type == 'sewing'){
+          if (findItem(medicationData[key].itemName) && DamageList.BodyPartDamage.NeedSewed[activeBodyPart]) {
+            input += '<button class="interactionbutton" onclick="InteractionButton(\''+medicationData[key].itemName+'\')">'+medicationData[key].buttonLang+'</button>';
+          } else{
+            input += '<button class="interactionbutton button-disabled">'+medicationData[key].buttonLang+'</button>';
+          }
+        }
+      });
+      $(".pane").append(input);
+    }, 0);
+  }
+
+
+  function findItem(name) {
+    for (var i = 0; i < invItems.length; i++) {
+      if (invItems[i].item == name){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function ClearDamageContents() {
+    $(".woundtext").empty();
+  }
+
+  function Torso() {
+    activeBodyPart = "Torso";
+    var currentbodypart = document.getElementsByClassName('currentbodypart');
+    currentbodypart[0].innerHTML = bodypartTranslations[activeBodyPart]
+    if (BodyCheckInit == false) {
+      StartupPage()
+    }else if (activeNavbar === "Medical") {
+      Medical(true);
+    } else if (activeNavbar === "Medicine") {
+      Medicine(true);
+    } else if (activeNavbar === "Interventions") {
+      Interventions();
+    }
+  }
+
+  function Head() {
+    activeBodyPart = "Head";
+    var currentbodypart = document.getElementsByClassName('currentbodypart');
+    currentbodypart[0].innerHTML = bodypartTranslations[activeBodyPart]
+    if (!loading){
+      if (BodyCheckInit == false) {
+        StartupPage()
+      }else if (activeNavbar === "Medical") {
+        Medical(true);
+      } else if (activeNavbar === "Medicine") {
+        Medicine(true);
+      } else if (activeNavbar === "Interventions") {
+        Interventions();
+      }
+    }else{
+      loading = false;
+    }
+  }
+
+  function Rarm() {
+    activeBodyPart = "Rarm";
+    var currentbodypart = document.getElementsByClassName('currentbodypart');
+    currentbodypart[0].innerHTML = bodypartTranslations[activeBodyPart]
+    if (BodyCheckInit == false) {
+      StartupPage()
+    }else if (activeNavbar === "Medical") {
+      Medical(true);
+    } else if (activeNavbar === "Medicine") {
+      Medicine(true);
+    } else if (activeNavbar === "Interventions") {
+      Interventions();
+    }
+  }
+
+  function Larm() {
+    activeBodyPart = "Larm";
+    var currentbodypart = document.getElementsByClassName('currentbodypart');
+    currentbodypart[0].innerHTML = bodypartTranslations[activeBodyPart]
+    if (BodyCheckInit == false) {
+      StartupPage()
+    }else if (activeNavbar === "Medical") {
+      Medical(true);
+    } else if (activeNavbar === "Medicine") {
+      Medicine(true);
+    } else if (activeNavbar === "Interventions") {
+      Interventions();
+    }
+
+  }
+
+  function Rleg() {
+    activeBodyPart = "Rleg";
+    var currentbodypart = document.getElementsByClassName('currentbodypart');
+    currentbodypart[0].innerHTML = bodypartTranslations[activeBodyPart]
+    if (BodyCheckInit == false) {
+      StartupPage()
+    }else if (activeNavbar === "Medical") {
+      Medical(true);
+    } else if (activeNavbar === "Medicine") {
+      Medicine(true);
+    } else if (activeNavbar === "Interventions") {
+      Interventions();
+    }
+  }
+
+  function Lleg() {
+    activeBodyPart = "Lleg";
+    var currentbodypart = document.getElementsByClassName('currentbodypart');
+    currentbodypart[0].innerHTML = bodypartTranslations[activeBodyPart]
+    if (BodyCheckInit == false) {
+      StartupPage()
+    }else if (activeNavbar === "Medical") {
+      Medical(true);
+    } else if (activeNavbar === "Medicine") {
+      Medicine(true);
+    } else if (activeNavbar === "Interventions") {
+      Interventions();
+    }
+  }
+
+
+  function ApplyTourniquet() {
+    document.getElementById("ApplyTourniquet").innerText = "Remove Tourniquet";
+    document.getElementById("ApplyTourniquet").onclick = function() {
+      RemoveTourniquet()
+    };
+    var data = DamageList.ServerId;
+    $.post('https://osp_ambulance/ApplyTourniquet', JSON.stringify({PlayerId: data, BodyPart: activeBodyPart}));
+  }
+
+  function RemoveTourniquet() {
+    document.getElementById("ApplyTourniquet").innerText = "Apply Tourniquet";
+    document.getElementById("ApplyTourniquet").onclick = function() {
+      ApplyTourniquet()
+    };
+    var data = DamageList.ServerId;
+    $.post('https://osp_ambulance/RemoveTourniquet', JSON.stringify({PlayerId: data, BodyPart: activeBodyPart}));
+  }
+
+  function InteractionButton(itemName, apply) {
+    $.post('https://osp_ambulance/UsedMedication', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart, item: itemName, apply: apply}));
+  }
+
+  function FractureButton(itemName) {
+    $.post('https://osp_ambulance/ApplyCast', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart, item: itemName}));
+  }
+
+
+  // EXTERNAL INTERACTION EVENTS
+
+  function CheckConsciousness() {
+    $.post('https://osp_ambulance/CheckConsciousness', JSON.stringify({PlayerId: currentPlayerId}));
+  }
+
+  function CheckPulse() {
+    $.post('https://osp_ambulance/CheckPulse', JSON.stringify({PlayerId: currentPlayerId}));
+  }
+
+  function CheckBodyTemp() {
+    $.post('https://osp_ambulance/CheckBodyTemp', JSON.stringify({PlayerId: currentPlayerId}));
+  }
+
+  function CPR() {
+    $.post('https://osp_ambulance/CPR', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart}));
+  }
+
+  function Bodybag() {
+    $.post('https://osp_ambulance/Bodybag', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart}));
+  }
+
+  function Carry() {
+    $.post('https://osp_ambulance/Carry', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart}));
+  }
+
+  function PutIn() {
+    $.post('https://osp_ambulance/PutIn', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart}));
+  }
+
+  function GetOut() {
+    $.post('https://osp_ambulance/GetOut', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart}));
+  }
+
+  function BlackoutRagdoll() {
+    $.post('https://osp_ambulance/BlackoutRagdoll', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart}));
+  }
+
+  function ReviveKit() {
+    $.post('https://osp_ambulance/ReviveKit', JSON.stringify({PlayerId: currentPlayerId, BodyPart: activeBodyPart}));
+  }
+
+  function addPatientClothing() {
+    $.post('https://osp_ambulance/PatientClothing', JSON.stringify({PlayerId: currentPlayerId}));
+  }
+
+
+
+
+
+  var isIn = false;
+  var percent = 100;
+  function painElement(percent) {
+    if (isIn) {
+      $("#painScreen").css("background", "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(255,255,255,0.75) " + percent + "%)")
+      $("#painScreen").fadeOut("fast");
+    } else {
+      $("#painScreen").css("background", "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(255,255,255,0.75) " + percent + "%)")
+      $("#painScreen").fadeIn("fast");
+    }
+    isIn = !isIn;
+  }
+
+  var i = 1000;
+  var isRunning = true;
+
+  function blackoutElement() {
+    if (i > 0 && isRunning) {
+      i--;
+      $("#painScreen").css("background", "radial-gradient(circle, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.97) " + i*(1/7) + "%, rgba(0,0,0,1.0) 100%)")
+      setTimeout(blackoutElement, 45);
+    }
+    if (i == 0){
+      BlackoutRagdoll()
+    }
+  }
+
+  function reverseblackoutElement() {
+    isRunning = false;
+    if (i < 1000) {
+      i++;
+      $("#painScreen").css("background", "radial-gradient(circle, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.97) " + i*(1/7) + "%, rgba(0,0,0,1.0) 100%)")
+      setTimeout(reverseblackoutElement, 45);
+    }
+    if (i == 1000) {
+      isRunning = true;
+    }
+
+  }
+
+  function hidescreenElement(){
+    var screen = document.getElementById("painScreen");
+    screen.style.display = "none";
+  }
+
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    const timeString = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return timeString;
+  }
+
+
+  function initiatecounter(){
+    var countdownNumberEl = document.getElementById('countdown-number');
+    countdownNumberEl.textContent = formatTime(countdown);
+    loopid = setInterval(function() {
+      countdown = --countdown <= 0 ? 0 : countdown;
+      countdownNumberEl.textContent = formatTime(countdown);
+      if (countdown === 0) {
+        clearInterval(loopid);
+      }
+
+    }, 1000);
+  }
+
+
+  function createRipple(event) {
+    const button = event.currentTarget;
+
+    const circle = document.createElement("span");
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    circle.classList.add("ripple", "uni");
+    
+    const ripple = button.getElementsByClassName("ripple")[0];
+
+    if (ripple) {
+      ripple.remove();
+    }
+
+    button.appendChild(circle);
+  }
+
+  var buttons = document.getElementsByTagName("button");
+  for (const button of buttons) {
+    button.addEventListener("click", createRipple);
+  }
+
+
+  let dragEl;
+  let dragHandleEl;
+  const lastPosition = {};
+
+  function setupDraggable() {
+    dragHandleEl = document.querySelector('[data-drag-handle]');
+    dragHandleEl.addEventListener('mousedown', dragStart);
+    dragHandleEl.addEventListener('mouseup', dragEnd);
+    dragHandleEl.addEventListener('mouseout', dragEnd);
+  }
+
+  function setupResizable() {
+    const resizeEl = document.querySelector('[data-resizable]');
+    resizeEl.style.setProperty('resize', 'both');
+    resizeEl.style.setProperty('overflow', 'hidden');
+    const resizeObserver = new ResizeObserver(updateImageScaling);
+    resizeObserver.observe(resizeEl);
+  }
+
+  function updateImageScaling() {
+    if (editSkellyIsOpen == false) {
+      return
+    }
+    const box = document.querySelector('.skellybox');
+    if (box == undefined) { 
+      return
+    }
+    const style = getComputedStyle(box);
+
+    skellyWidth = style.width
+    var div = document.querySelector(".skellybox");
+    div.style.width = skellyWidth; 
+    var width = parseFloat(style.width) * 0.05
+
+
+    function updateSkellySize(ratio) {
+      $('.ondmgSkelly').css({
+        'width': 75 * ratio + 'vh',
+        'height': 90 * ratio + 'vh',
+      });
+      $('.backgroundimg').css({
+        'width': 54 * ratio + 'vh',
+        'margin-top': 0.7 * ratio + 'vh',
+        'margin-left': ((0) * ratio) - 15 * ratio + 'vh'
+      });
+      $('.head2').css({
+        'width': 5.2 * ratio + 'vh',
+        'margin-top': 3.9 * ratio + 'vh',
+        'margin-left': (9.5 * ratio) + 'vh' 
+      });
+      $('.torso2').css({
+        'width': 8.7 * ratio + 'vh',
+        'margin-top': 10.9 * ratio + 'vh',
+        'margin-left': (7.75 * ratio ) + 'vh'
+      });
+      $('.rarm2').css({
+        'width': 6.84 * ratio + 'vh',
+        'margin-top': 11.24 * ratio + 'vh',
+        'margin-left': (2.6 * ratio) + 'vh' 
+      });
+      $('.larm2').css({
+        'width': 6.4 * ratio + 'vh',
+        'margin-top': 11.24 * ratio + 'vh',
+        'margin-left': (15 * ratio) + 'vh' 
+      });
+      $('.rleg2').css({
+        'width': 5.8 * ratio + 'vh',
+        'margin-top': 24.25 * ratio + 'vh',
+        'margin-left': (6 * ratio) + 'vh'
+      });
+      $('.lleg2').css({
+        'width': 5.85 * ratio + 'vh',
+        'margin-top': 24.45 * ratio + 'vh',
+        'margin-left': (12.2 * ratio) + 'vh'
+      });
+    }
+
+    updateSkellySize(width/17);
+  }
+
+  function dragStart(event) {
+    dragEl = getDraggableAncestor(event.target);
+    dragEl.style.setProperty('position', 'absolute');
+    lastPosition.left = event.clientX;
+    lastPosition.top = event.clientY;
+    dragHandleEl.classList.add('dragging');
+    dragHandleEl.addEventListener('mousemove', dragMove);
+  }
+
+  function dragMove(event) {
+    const dragElRect = dragEl.getBoundingClientRect();
+    const newLeft = dragElRect.left + event.clientX - lastPosition.left;
+    const newTop = dragElRect.top + event.clientY - lastPosition.top;
+    skellyPos = [newLeft, newTop]
+    dragEl.style.setProperty('left', `${newLeft}px`);
+    dragEl.style.setProperty('top', `${newTop}px`);
+    lastPosition.left = event.clientX;
+    lastPosition.top = event.clientY;
+    window.getSelection().removeAllRanges();
+  }
+
+  function getDraggableAncestor(element) {
+    if (element.getAttribute('data-draggable')) return element;
+    return getDraggableAncestor(element.parentElement);
+  }
+
+  function dragEnd() {
+    dragHandleEl.classList.remove('dragging');
+    dragHandleEl.removeEventListener('mousemove', dragMove);
+    dragEl = null;
+  }
+
+
+</script>
+</html>
