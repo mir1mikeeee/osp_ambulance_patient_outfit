@@ -1,5 +1,6 @@
 --[[
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Github Repo: https://github.com/mir1mikeeee/osp_ambulance_patient_outfit
 
 Add this config part to the config.lua of the osp_ambulance resource
 

@@ -1,5 +1,6 @@
 --[[
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Github Repo: https://github.com/mir1mikeeee/osp_ambulance_patient_outfit
 
 Add this file to the client folder
 
@@ -22,19 +23,17 @@ RegisterNetEvent('osp_ambulance:c:custom:addPatientClothing', function()
     if Character == nil then return end
 
     local function convertToOData(clothingConfig)
-        local oData = {}
-    
+        local oData = {outfitData = {}}
         for key, value in pairs(clothingConfig) do
-            local part = key:match("^(%w+)_")
+            local part = key == 'arms' and 'arms' or key:match("^(%w+)_")
             local isTexture = key:match("_2$")
             local drawableOrTexture = isTexture and "texture" or "item"
             
-            -- Erstelle die oData-Tabelle
-            if not oData[part] then
-                oData[part] = { item = 0, texture = 0 }
+            if not oData.outfitData[part] then
+                oData.outfitData[part] = { item = 0, texture = 0 }
             end
             
-            oData[part][drawableOrTexture] = value
+            oData.outfitData[part][drawableOrTexture] = value
         end
         return oData
     end
