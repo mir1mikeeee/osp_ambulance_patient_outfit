@@ -46,24 +46,12 @@ A UI button and command to add patient clothing to a player.
 **Deutsch:**
 - Um das Skript zu nutzen, ersetze die Dateien gemäß der Ordnerstruktur im `osp_ambulance`-Verzeichnis.  
   Achte darauf, die bestehenden Dateien korrekt zu überschreiben.
+  Anbei für eine ausführliche Installation siehe im Nutzungspart der Readme!
 
 **English:**
 - To use this script, replace the files according to the folder structure in the `osp_ambulance` directory.  
   Ensure that you overwrite the existing files correctly.
-
----
-
-## 📦 Features
-
-- **Deutsch:**
-  - 🩺 Einfache Möglichkeit, Spielern Patienten-Kleidung zuzuweisen.
-  - 🌐 Anpassbare Sprachunterstützung für verschiedene Übersetzungen.
-  - 🔧 Flexibler Aufbau, um den UI-Button optional ohne Item zu verwenden.
-
-- **English:**
-  - 🩺 Easy way to assign patient clothing to players.
-  - 🌐 Customizable language support for various translations.
-  - 🔧 Flexible setup to optionally use the UI button without an item.
+  For detailed installation instructions, see the Usage section!
 
 ---
 
@@ -84,6 +72,20 @@ A UI button and command to add patient clothing to a player.
 4. Adjust the translations in `lang.lua` as needed.  
 5. Add the content of `config.lua` into the complete `config.lua` of the `osp_ambulance` resource.  
 6. Replace the `fxmanifest.lua` with the `fxmanifest.lua` of the `osp_ambulance` resource.  
+
+---
+
+## 📦 Features
+
+- **Deutsch:**
+  - 🩺 Einfache Möglichkeit, Spielern Patienten-Kleidung zuzuweisen.
+  - 🌐 Anpassbare Sprachunterstützung für verschiedene Übersetzungen.
+  - 🔧 Flexibler Aufbau, um den UI-Button optional ohne Item zu verwenden.
+
+- **English:**
+  - 🩺 Easy way to assign patient clothing to players.
+  - 🌐 Customizable language support for various translations.
+  - 🔧 Flexible setup to optionally use the UI button without an item.
 
 ---
 
