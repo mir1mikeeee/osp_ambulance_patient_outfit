@@ -5,7 +5,7 @@ lua54 'yes'
 
 description 'Complete Medical System Overhaul'
 author 'OSP Development'
-version '1.5.3'
+version '1.5.4'
 
 shared_script {
     'lang/lang.lua',
