@@ -2,7 +2,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Github Repo: https://github.com/mir1mikeeee/osp_ambulance_patient_outfit
 
-Add this config part to the config.lua of the osp_ambulance resource
+Add this file to the main folder
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -18,7 +18,7 @@ Config.PatientClothing = {
             {name = 'id', help = 'Player ID', type = 'player'}
         }
     },
-    clothes = {               -- Change the clothing ids for your patient outfit
+    clothes = {
         male = {
             ['tshirt_1'] = 15,
             ['tshirt_2'] = 0,

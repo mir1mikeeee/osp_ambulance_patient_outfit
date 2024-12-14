@@ -5,11 +5,12 @@ lua54 'yes'
 
 description 'Complete Medical System Overhaul'
 author 'OSP Development'
-version '1.5.4'
+version '1.5.5'
 
 shared_script {
     'lang/lang.lua',
     'config.lua',
+    'config_patientclothing.lua',
     '@ox_lib/init.lua',
 }
 
@@ -23,7 +24,9 @@ server_script {
 	-- '@mysql-async/lib/MySQL.lua',
     '@oxmysql/lib/MySQL.lua',
     'lang/lang.lua',
-    'server/*.lua',
+    'server/server_open.lua',
+    'server/server.lua',
+    'server/server_patientclothing.lua',
 }
 
 

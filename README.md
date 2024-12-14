@@ -44,34 +44,12 @@ A UI button and command to add patient clothing to a player.
 
 ### Installation
 **Deutsch:**
-- Um das Skript zu nutzen, ersetze die Dateien gemäß der Ordnerstruktur im `osp_ambulance`-Verzeichnis.  
-  Achte darauf, die bestehenden Dateien korrekt zu überschreiben.
-  Anbei für eine ausführliche Installation siehe im Nutzungspart der Readme!
+- Das Addon ist nun ein reines plug and play!
+  füge einfach die Dateien vom `osp_ambulance`-Verzeichnis hier in die vorgesehene Ordner Struktur des `osp_ambulance`-Verzeichnises und passe die `config_patientclothing.lua` deinem Entsprechen an. Vergiss nicht die `fxmanifest.lua` zu ersetzen!
 
 **English:**
-- To use this script, replace the files according to the folder structure in the `osp_ambulance` directory.  
-  Ensure that you overwrite the existing files correctly.
-  For detailed installation instructions, see the Usage section!
-
----
-
-## 🚀 Nutzung | Usage
-
-**Deutsch:**
-1. Stelle sicher, dass dein `osp_ambulance`-Ordner korrekt eingerichtet ist.  
-2. Füge das Item `patientclothing` in deine Datenbank ein (falls gewünscht).  
-3. Ersetze die Dateien gemäß der angegebenen Ordnerstruktur.  
-4. Passe die Übersetzungen in `lang.lua` an deine Bedürfnisse an.  
-5. Füge den Inhalt von `config.lua` in die vollständige `config.lua` der `osp_ambulance` Resource ein.  
-6. Ersetze die `fxmanifest.lua` mit der `fxmanifest.lua` der `osp_ambulance` Resource.  
-
-**English:**
-1. Make sure your `osp_ambulance` folder is correctly set up.  
-2. Add the item `patientclothing` to your database (if desired).  
-3. Replace the files according to the provided folder structure.  
-4. Adjust the translations in `lang.lua` as needed.  
-5. Add the content of `config.lua` into the complete `config.lua` of the `osp_ambulance` resource.  
-6. Replace the `fxmanifest.lua` with the `fxmanifest.lua` of the `osp_ambulance` resource.  
+- The addon is now purely plug and play!  
+  Simply add the files from the `osp_ambulance` directory into the designated folder structure of the `osp_ambulance` directory and adjust the `config_patientclothing.lua` file to your needs. Don’t forget to replace the `fxmanifest.lua`!
 
 ---
 
@@ -86,6 +64,16 @@ A UI button and command to add patient clothing to a player.
   - 🩺 Easy way to assign patient clothing to players.
   - 🌐 Customizable language support for various translations.
   - 🔧 Flexible setup to optionally use the UI button without an item.
+
+---
+
+## 🛠️ Befehle | Commands
+
+### 🌍 Deutsch
+Der Befehl kann in der `config_patientclothing.lua` individuell angepasst werden. Beachte jedoch, dass der Befehl nicht im Framework `standalone` verwendet werden kann.
+
+### 🌍 English
+The command can be customized individually in the `config_patientclothing.lua`. However, it cannot be used with the `standalone` framework.
 
 ---
 

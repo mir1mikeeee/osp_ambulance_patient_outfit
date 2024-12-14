@@ -181,7 +181,8 @@ lang = {
         not_ems = 'You are not EMS or not signed in',
         not_online = 'Player Not Online',
         not_conscious = 'The player is not conscious',
-        you_cant_interact_with_yourself = 'You cant do that on yourself!'
+        you_cant_interact_with_yourself = 'You cant do that on yourself!',
+        player_too_far_away = 'Player is too far away!',
     },
     success = {
         revived = 'You revived a person',

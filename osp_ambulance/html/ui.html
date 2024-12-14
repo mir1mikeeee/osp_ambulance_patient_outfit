@@ -262,6 +262,10 @@
     font-family: Roboto;
   }
 
+  img {
+    opacity: 0.9;
+  }
+
 
 
   :root {
@@ -1019,20 +1023,30 @@
   }
 
   .tab-pane {
-    position: relative;
-    overflow: hidden;
+    /* position: relative; */
+    position: absolute;
+    margin-top: -32vh;
+    height: 32vh;
+    overflow-y: scroll;
     width: 30.6vh;
     margin-left: -1.8vh;
     padding-bottom: 1.8vh;
   }
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+
   .pane {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+    height: 34vh;
     width: 30.6vh;
     text-align: center;
     margin-left: -2.88vh;
     padding-bottom: 1.8vh;
+    overflow-y: scroll;
   }
 
 
@@ -2031,6 +2045,19 @@
       myElement.style.left = absoluteX + 'px';
       myElement.style.top = absoluteY + 'px';
 
+    }
+
+    if (data.blackscreen) {
+      if (data.blackscreen == 1) {
+        var screen = document.getElementById("painScreen");
+        screen.style.display = "block";
+        $("#painScreen").css("background", "black")
+          .fadeIn(500)
+        $(painScreen).fadeIn(500);
+      } else if (data.blackscreen == 2) {
+        var screen = document.getElementById("painScreen");
+        screen.style.display = "none";
+      }
     }
 
     if (data.blackout) {
