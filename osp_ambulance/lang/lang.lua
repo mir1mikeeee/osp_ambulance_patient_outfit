@@ -142,7 +142,7 @@ lang = {
         carry = 'Carry',
         putin = 'Put In Vehicle',
         getout = 'Get Out Of Vehicle',
-        patientclothing = 'Add Patient Outfit',
+        patientclothing = 'Add/Remove Patient Outfit',
     },
     ui = {
         pain = 'Active Pain',
@@ -183,6 +183,7 @@ lang = {
         not_conscious = 'The player is not conscious',
         you_cant_interact_with_yourself = 'You cant do that on yourself!',
         player_too_far_away = 'Player is too far away!',
+        not_authorized = 'You are not authorized for this action!',
     },
     success = {
         revived = 'You revived a person',

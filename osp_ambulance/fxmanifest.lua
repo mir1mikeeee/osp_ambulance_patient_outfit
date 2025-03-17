@@ -5,7 +5,7 @@ lua54 'yes'
 
 description 'Complete Medical System Overhaul'
 author 'OSP Development'
-version '1.5.5'
+version '1.5.8'
 
 shared_script {
     'lang/lang.lua',
@@ -76,6 +76,9 @@ export {
     'isDead',
 }
 
-
+dependency {
+    'ox_lib',
+    'screenshot-basic',
+}
 
 dependency '/assetpacks'

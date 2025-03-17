@@ -9,7 +9,11 @@ Add this file to the server folder
 ]]
 
 RegisterNetEvent('osp_ambulance:s:custom:addPatientClothing', function(target)
-    TriggerClientEvent('osp_ambulance:c:custom:addPatientClothing', target)
+    if Player(target).state.inPatientClothing then
+        TriggerClientEvent('osp_ambulance:c:custom:removePatientClothing', target)
+    else
+        TriggerClientEvent('osp_ambulance:c:custom:addPatientClothing', target)
+    end
 end)
 
 if Config.PatientClothing.command_option.enable then

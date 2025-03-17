@@ -9,7 +9,6 @@ Add this file to the main folder
 ]]
 
 Config.PatientClothing = {
-    framework = 'standalone', -- or if you want to use Config.Framework then set framework = Config.Framework
     command_option = {
         enable = true,
         command = 'patientclothing',

@@ -26,9 +26,10 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
 
-  <script src="cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- <script src="cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <script src="jquery.min.js"></script>
 
   <div id="painScreen" style="position: absolute; height: 100%; width: 100%;"></div>
 
@@ -2256,6 +2257,7 @@
 
       if (data.skellyWidth != undefined) {
         skellyWidth = data.skellyWidth
+        skellyPos = data.skellyPos
       }
 
       $('.skellybox').remove();
@@ -2276,7 +2278,9 @@
       $("body").append(input);
 
 
-
+      if (skellyPos == undefined) {
+        skellyPos = [0.0, 0.0]
+      }
       var div = document.querySelector(".skellybox");
       div.style.width = skellyWidth;
       div.style.left = skellyPos[0] + 'px';
@@ -2315,7 +2319,7 @@
         skellyPos = [0.0, 0.0]
       }
       div.style.width = skellyWidth;
-      div.style.left = skellyPos[0] + 'px';
+      div.style.left = (skellyPos[0]) + 'px';
       div.style.top = (skellyPos[1] + 40) + 'px';
 
       const box = document.querySelector('.ondmgSkelly');
@@ -2462,8 +2466,15 @@
       if (data.openSkelly != undefined) {
         if (data.openSkelly) {
           skellyIsOpen = true
-          var screen = document.getElementsByClassName("ondmgSkelly");
-          screen[0].style.display = "block";
+          let element = document.getElementsByClassName("ondmgSkelly");
+          element[0].style.display = "block";
+          if (skellyPos == undefined) {
+            skellyPos = [0.0, 0.0]
+          }
+          let div = document.querySelector(".ondmgSkelly");
+          div.style.width = skellyWidth;
+          div.style.left = (skellyPos[0]) + 'px';
+          div.style.top = (skellyPos[1] + 40) + 'px';
         } else {
           skellyIsOpen = false
           $('.ondmgSkelly').remove();
@@ -3455,6 +3466,11 @@
   }
 
   function InteractionButton(itemName, apply) {
+    if (itemName == 'epinephrine' || itemName == 'morphine') {
+      var audio = new Audio("inject.wav");
+      audio.volume = 0.8;
+      audio.play();
+    }
     $.post('https://osp_ambulance/UsedMedication', JSON.stringify({ PlayerId: currentPlayerId, BodyPart: activeBodyPart, item: itemName, apply: apply }));
   }
 
