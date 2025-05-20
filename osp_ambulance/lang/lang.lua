@@ -1,4 +1,3 @@
-print('loading lang.lua')
 lang = {
     vitals = {
         conscious = 'The patient was conscious',
@@ -47,13 +46,13 @@ lang = {
         attach = 'Attach ECG',
         options = 'Open Options',
         charge = 'Charge Pedals',
-        chock = 'Chock',
+        chock = 'Shock',
         defib = 'Defibrillator',
         charge_time = 'Time to Charge',
         sec = '8 seconds',
         joule = 'Joule Input',
         charging = 'Charging',
-        power_setting = 'Chock Power Setting',
+        power_setting = 'Shock Power Setting',
         pickup_button = '[E] Pickup ECG',
         delete_button = '[Q] Delete ECG',
         attach_button = '[G] Attach ECG',
@@ -184,6 +183,7 @@ lang = {
         you_cant_interact_with_yourself = 'You cant do that on yourself!',
         player_too_far_away = 'Player is too far away!',
         not_authorized = 'You are not authorized for this action!',
+        no_player_in_xray = 'No player in the xray',
     },
     success = {
         revived = 'You revived a person',

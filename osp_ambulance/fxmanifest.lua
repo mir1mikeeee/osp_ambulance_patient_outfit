@@ -5,11 +5,18 @@ lua54 'yes'
 
 description 'Complete Medical System Overhaul'
 author 'OSP Development'
-version '1.5.8'
+version '1.6.0'
 
 shared_script {
     'lang/lang.lua',
-    'config.lua',
+    'config/general.lua',
+    'config/locations.lua',
+    'config/weapons.lua',
+    'config/fractures.lua',
+    'config/medications.lua',
+    'config/shop.lua',
+    'config/vehicles.lua',
+    'config/wounds.lua',
     'config_patientclothing.lua',
     '@ox_lib/init.lua',
 }
@@ -24,6 +31,7 @@ server_script {
 	-- '@mysql-async/lib/MySQL.lua',
     '@oxmysql/lib/MySQL.lua',
     'lang/lang.lua',
+    'config/webhook.lua',
     'server/server_open.lua',
     'server/server.lua',
     'server/server_patientclothing.lua',
@@ -33,8 +41,8 @@ server_script {
 files {
     'html/*',
     'html/img/*',
-    'sound/data/audioexample_sounds.dat54.rel',
-	'sound/audiodirectory/custom_sounds.awc',
+    'sound/data/ambulance_sounds.dat54.rel',
+	'sound/audiodirectory/ambulance_sounds.awc',
 	'vehicles.meta',
 	'carvariations.meta',
 	'handling.meta',
@@ -50,21 +58,15 @@ data_file 'VEHICLE_VARIATION_FILE'	'carvariations.meta'
 data_file 'DLC_ITYP_REQUEST' 'stream/ems_props.ytyp'
 
 data_file 'AUDIO_WAVEPACK' 'sound/audiodirectory'
-data_file 'AUDIO_SOUNDDATA' 'sound/data/audioexample_sounds.dat'
+data_file 'AUDIO_SOUNDDATA' 'sound/data/ambulance_sounds.dat'
 
-
-files {
-	'vehicles.meta',
-	'carvariations.meta',
-	'handling.meta'
-}
 
 ui_page {
     'html/ui.html'
 }
 
 escrow_ignore {
-    'config.lua',
+    'config/*.lua',
     'client/client_open.lua',
     'server/server_open.lua',
     'lang/lang.lua',

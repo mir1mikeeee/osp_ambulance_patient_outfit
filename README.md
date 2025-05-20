@@ -8,6 +8,19 @@ A UI button and command to add patient clothing to a player.
 
 ---
 
+## 📋 Item for ox_inventory
+
+```lua
+['patientclothing'] = {
+    label = 'Patient Clothing',
+    weight = 0,
+    description = 'a item for add or remove the patient outfit',
+    stack = true,
+},
+```
+
+---
+
 ## 📋 Informationen | Information
 
 ### UI-Button

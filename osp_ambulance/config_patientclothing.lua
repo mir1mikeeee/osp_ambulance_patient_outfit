@@ -1,3 +1,4 @@
+Config = Config or {}
 --[[
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Github Repo: https://github.com/mir1mikeeee/osp_ambulance_patient_outfit
